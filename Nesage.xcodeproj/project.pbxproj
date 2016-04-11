@@ -1,0 +1,573 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30600E0B1CB9C223004D722C /* MMMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30600E0A1CB9C223004D722C /* MMMarkdown.framework */; };
+		309375891CB714A100A68F8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309375881CB714A100A68F8E /* AppDelegate.m */; };
+		3093758C1CB714A100A68F8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3093758B1CB714A100A68F8E /* main.m */; };
+		3093758F1CB714A100A68F8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3093758E1CB714A100A68F8E /* ViewController.m */; };
+		309375921CB714A100A68F8E /* Document.m in Sources */ = {isa = PBXBuildFile; fileRef = 309375911CB714A100A68F8E /* Document.m */; };
+		309375941CB714A200A68F8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 309375931CB714A200A68F8E /* Assets.xcassets */; };
+		309375971CB714A200A68F8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 309375951CB714A200A68F8E /* Main.storyboard */; };
+		309375A21CB714A200A68F8E /* NesageTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 309375A11CB714A200A68F8E /* NesageTests.m */; };
+		309375AD1CB714A300A68F8E /* NesageUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 309375AC1CB714A300A68F8E /* NesageUITests.m */; };
+		309375BE1CB717EC00A68F8E /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 309375BC1CB717EC00A68F8E /* index.html */; };
+		309375C01CB7185900A68F8E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309375BF1CB7185900A68F8E /* WebKit.framework */; };
+		309375C31CB71CA100A68F8E /* NEWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 309375C21CB71CA100A68F8E /* NEWebView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3093759E1CB714A200A68F8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3093757C1CB714A100A68F8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 309375831CB714A100A68F8E;
+			remoteInfo = Nesage;
+		};
+		309375A91CB714A300A68F8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3093757C1CB714A100A68F8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 309375831CB714A100A68F8E;
+			remoteInfo = Nesage;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		30600E0A1CB9C223004D722C /* MMMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMMarkdown.framework; path = Carthage/Build/Mac/MMMarkdown.framework; sourceTree = "<group>"; };
+		309375841CB714A100A68F8E /* Nesage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nesage.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		309375871CB714A100A68F8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		309375881CB714A100A68F8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3093758B1CB714A100A68F8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3093758D1CB714A100A68F8E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3093758E1CB714A100A68F8E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		309375901CB714A100A68F8E /* Document.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Document.h; sourceTree = "<group>"; };
+		309375911CB714A100A68F8E /* Document.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Document.m; sourceTree = "<group>"; };
+		309375931CB714A200A68F8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		309375961CB714A200A68F8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		309375981CB714A200A68F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3093759D1CB714A200A68F8E /* NesageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NesageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		309375A11CB714A200A68F8E /* NesageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NesageTests.m; sourceTree = "<group>"; };
+		309375A31CB714A200A68F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		309375A81CB714A300A68F8E /* NesageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NesageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		309375AC1CB714A300A68F8E /* NesageUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NesageUITests.m; sourceTree = "<group>"; };
+		309375AE1CB714A300A68F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		309375BC1CB717EC00A68F8E /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = html/index.html; sourceTree = "<group>"; };
+		309375BF1CB7185900A68F8E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		309375C11CB71CA100A68F8E /* NEWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEWebView.h; sourceTree = "<group>"; };
+		309375C21CB71CA100A68F8E /* NEWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEWebView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		309375811CB714A100A68F8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30600E0B1CB9C223004D722C /* MMMarkdown.framework in Frameworks */,
+				309375C01CB7185900A68F8E /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3093759A1CB714A200A68F8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		309375A51CB714A200A68F8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3093757B1CB714A000A68F8E = {
+			isa = PBXGroup;
+			children = (
+				30600E0A1CB9C223004D722C /* MMMarkdown.framework */,
+				309375BF1CB7185900A68F8E /* WebKit.framework */,
+				309375861CB714A100A68F8E /* Nesage */,
+				309375A01CB714A200A68F8E /* NesageTests */,
+				309375AB1CB714A300A68F8E /* NesageUITests */,
+				309375851CB714A100A68F8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		309375851CB714A100A68F8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				309375841CB714A100A68F8E /* Nesage.app */,
+				3093759D1CB714A200A68F8E /* NesageTests.xctest */,
+				309375A81CB714A300A68F8E /* NesageUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		309375861CB714A100A68F8E /* Nesage */ = {
+			isa = PBXGroup;
+			children = (
+				309375C11CB71CA100A68F8E /* NEWebView.h */,
+				309375C21CB71CA100A68F8E /* NEWebView.m */,
+				309375871CB714A100A68F8E /* AppDelegate.h */,
+				309375881CB714A100A68F8E /* AppDelegate.m */,
+				3093758D1CB714A100A68F8E /* ViewController.h */,
+				3093758E1CB714A100A68F8E /* ViewController.m */,
+				309375901CB714A100A68F8E /* Document.h */,
+				309375911CB714A100A68F8E /* Document.m */,
+				309375931CB714A200A68F8E /* Assets.xcassets */,
+				309375951CB714A200A68F8E /* Main.storyboard */,
+				309375981CB714A200A68F8E /* Info.plist */,
+				3093758A1CB714A100A68F8E /* Supporting Files */,
+			);
+			path = Nesage;
+			sourceTree = "<group>";
+		};
+		3093758A1CB714A100A68F8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				309375BA1CB717C100A68F8E /* html */,
+				3093758B1CB714A100A68F8E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		309375A01CB714A200A68F8E /* NesageTests */ = {
+			isa = PBXGroup;
+			children = (
+				309375A11CB714A200A68F8E /* NesageTests.m */,
+				309375A31CB714A200A68F8E /* Info.plist */,
+			);
+			path = NesageTests;
+			sourceTree = "<group>";
+		};
+		309375AB1CB714A300A68F8E /* NesageUITests */ = {
+			isa = PBXGroup;
+			children = (
+				309375AC1CB714A300A68F8E /* NesageUITests.m */,
+				309375AE1CB714A300A68F8E /* Info.plist */,
+			);
+			path = NesageUITests;
+			sourceTree = "<group>";
+		};
+		309375BA1CB717C100A68F8E /* html */ = {
+			isa = PBXGroup;
+			children = (
+				309375BC1CB717EC00A68F8E /* index.html */,
+			);
+			name = html;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		309375831CB714A100A68F8E /* Nesage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 309375B11CB714A300A68F8E /* Build configuration list for PBXNativeTarget "Nesage" */;
+			buildPhases = (
+				309375801CB714A100A68F8E /* Sources */,
+				309375811CB714A100A68F8E /* Frameworks */,
+				309375821CB714A100A68F8E /* Resources */,
+				30600E0C1CB9C6BD004D722C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nesage;
+			productName = Nesage;
+			productReference = 309375841CB714A100A68F8E /* Nesage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3093759C1CB714A200A68F8E /* NesageTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 309375B41CB714A300A68F8E /* Build configuration list for PBXNativeTarget "NesageTests" */;
+			buildPhases = (
+				309375991CB714A200A68F8E /* Sources */,
+				3093759A1CB714A200A68F8E /* Frameworks */,
+				3093759B1CB714A200A68F8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3093759F1CB714A200A68F8E /* PBXTargetDependency */,
+			);
+			name = NesageTests;
+			productName = NesageTests;
+			productReference = 3093759D1CB714A200A68F8E /* NesageTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		309375A71CB714A200A68F8E /* NesageUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 309375B71CB714A300A68F8E /* Build configuration list for PBXNativeTarget "NesageUITests" */;
+			buildPhases = (
+				309375A41CB714A200A68F8E /* Sources */,
+				309375A51CB714A200A68F8E /* Frameworks */,
+				309375A61CB714A200A68F8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				309375AA1CB714A300A68F8E /* PBXTargetDependency */,
+			);
+			name = NesageUITests;
+			productName = NesageUITests;
+			productReference = 309375A81CB714A300A68F8E /* NesageUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3093757C1CB714A100A68F8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "ProSoftware,Inc.";
+				TargetAttributes = {
+					309375831CB714A100A68F8E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					3093759C1CB714A200A68F8E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 309375831CB714A100A68F8E;
+					};
+					309375A71CB714A200A68F8E = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 309375831CB714A100A68F8E;
+					};
+				};
+			};
+			buildConfigurationList = 3093757F1CB714A100A68F8E /* Build configuration list for PBXProject "Nesage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3093757B1CB714A000A68F8E;
+			productRefGroup = 309375851CB714A100A68F8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				309375831CB714A100A68F8E /* Nesage */,
+				3093759C1CB714A200A68F8E /* NesageTests */,
+				309375A71CB714A200A68F8E /* NesageUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		309375821CB714A100A68F8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309375941CB714A200A68F8E /* Assets.xcassets in Resources */,
+				309375BE1CB717EC00A68F8E /* index.html in Resources */,
+				309375971CB714A200A68F8E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3093759B1CB714A200A68F8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		309375A61CB714A200A68F8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30600E0C1CB9C6BD004D722C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/MMMarkdown.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		309375801CB714A100A68F8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309375C31CB71CA100A68F8E /* NEWebView.m in Sources */,
+				309375921CB714A100A68F8E /* Document.m in Sources */,
+				3093758F1CB714A100A68F8E /* ViewController.m in Sources */,
+				3093758C1CB714A100A68F8E /* main.m in Sources */,
+				309375891CB714A100A68F8E /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		309375991CB714A200A68F8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309375A21CB714A200A68F8E /* NesageTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		309375A41CB714A200A68F8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309375AD1CB714A300A68F8E /* NesageUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3093759F1CB714A200A68F8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 309375831CB714A100A68F8E /* Nesage */;
+			targetProxy = 3093759E1CB714A200A68F8E /* PBXContainerItemProxy */;
+		};
+		309375AA1CB714A300A68F8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 309375831CB714A100A68F8E /* Nesage */;
+			targetProxy = 309375A91CB714A300A68F8E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		309375951CB714A200A68F8E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				309375961CB714A200A68F8E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		309375AF1CB714A300A68F8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		309375B01CB714A300A68F8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		309375B21CB714A300A68F8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Nesage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.44da.Nesage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		309375B31CB714A300A68F8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				INFOPLIST_FILE = Nesage/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.44da.Nesage;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		309375B51CB714A300A68F8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NesageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.prosoftware.NesageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nesage.app/Contents/MacOS/Nesage";
+			};
+			name = Debug;
+		};
+		309375B61CB714A300A68F8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NesageTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.prosoftware.NesageTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nesage.app/Contents/MacOS/Nesage";
+			};
+			name = Release;
+		};
+		309375B81CB714A300A68F8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NesageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.prosoftware.NesageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Nesage;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		309375B91CB714A300A68F8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = NesageUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.prosoftware.NesageUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Nesage;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3093757F1CB714A100A68F8E /* Build configuration list for PBXProject "Nesage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				309375AF1CB714A300A68F8E /* Debug */,
+				309375B01CB714A300A68F8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		309375B11CB714A300A68F8E /* Build configuration list for PBXNativeTarget "Nesage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				309375B21CB714A300A68F8E /* Debug */,
+				309375B31CB714A300A68F8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		309375B41CB714A300A68F8E /* Build configuration list for PBXNativeTarget "NesageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				309375B51CB714A300A68F8E /* Debug */,
+				309375B61CB714A300A68F8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		309375B71CB714A300A68F8E /* Build configuration list for PBXNativeTarget "NesageUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				309375B81CB714A300A68F8E /* Debug */,
+				309375B91CB714A300A68F8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3093757C1CB714A100A68F8E /* Project object */;
+}
