@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */; };
+		300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */; };
 		30600E0B1CB9C223004D722C /* MMMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30600E0A1CB9C223004D722C /* MMMarkdown.framework */; };
 		309375891CB714A100A68F8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309375881CB714A100A68F8E /* AppDelegate.m */; };
 		3093758C1CB714A100A68F8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3093758B1CB714A100A68F8E /* main.m */; };
@@ -39,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePanelAccessoryView.h; sourceTree = "<group>"; };
+		300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePanelAccessoryView.m; sourceTree = "<group>"; };
+		300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavePanelAccessoryView.xib; sourceTree = "<group>"; };
 		30600E0A1CB9C223004D722C /* MMMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMMarkdown.framework; path = Carthage/Build/Mac/MMMarkdown.framework; sourceTree = "<group>"; };
 		309375841CB714A100A68F8E /* Nesage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nesage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309375871CB714A100A68F8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,6 +120,9 @@
 		309375861CB714A100A68F8E /* Nesage */ = {
 			isa = PBXGroup;
 			children = (
+				300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */,
+				300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */,
+				300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */,
 				309375C11CB71CA100A68F8E /* NEWebView.h */,
 				309375C21CB71CA100A68F8E /* NEWebView.m */,
 				309375871CB714A100A68F8E /* AppDelegate.h */,
@@ -271,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				309375941CB714A200A68F8E /* Assets.xcassets in Resources */,
+				300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */,
 				309375BE1CB717EC00A68F8E /* index.html in Resources */,
 				309375971CB714A200A68F8E /* Main.storyboard in Resources */,
 			);
@@ -317,6 +326,7 @@
 				309375C31CB71CA100A68F8E /* NEWebView.m in Sources */,
 				309375921CB714A100A68F8E /* Document.m in Sources */,
 				3093758F1CB714A100A68F8E /* ViewController.m in Sources */,
+				300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */,
 				3093758C1CB714A100A68F8E /* main.m in Sources */,
 				309375891CB714A100A68F8E /* AppDelegate.m in Sources */,
 			);

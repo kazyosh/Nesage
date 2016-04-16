@@ -10,6 +10,8 @@
 #import <WebKit/WebKit.h>
 
 #import "NEWebView.h"
+#import "SavePanelAccessoryView.h"
+
 #import "ViewController.h"
 
 @interface ViewController()<NSDraggingDestination, NSComboBoxDataSource, NSComboBoxDelegate, NEWebViewDelegate>
@@ -27,6 +29,10 @@
     [super viewDidLoad];
     
     self.webView.delegate = self;
+    [self loadInitialHtml];
+}
+
+- (void)loadInitialHtml {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"index"
                                                      ofType:@"html"];
     NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]];
@@ -95,6 +101,74 @@ void fseventCallbak(
     [vc.webView reload];
 }
 
+- (void)performClose:(id)sender {
+    if (self.fseventStream) {
+        FSEventStreamStop(self.fseventStream);
+        FSEventStreamInvalidate(self.fseventStream);
+        FSEventStreamRelease(self.fseventStream);
+        self.fseventStream = NULL;
+    }
+    [self loadInitialHtml];
+}
+
+- (void)exportDocument:(id)sender {
+    if (self.savePanel == nil) {
+        self.savePanel = [NSSavePanel savePanel];
+        self.savePanel.allowedFileTypes = @[@"html", @"HTML", @"pdf", @"PDF"];
+        self.savePanel.extensionHidden = NO;
+        SavePanelAccessoryView *accessoryView = [[SavePanelAccessoryView alloc] initWithFrame:NSMakeRect(0.0, 0.0, 380.0, 60.0)];
+        accessoryView.fileFormat.delegate = self;
+        self.savePanel.accessoryView = accessoryView;
+    }
+    else {
+        NSString *pathExtension = [self.savePanel.nameFieldStringValue pathExtension];
+        if ([pathExtension length]) {
+            SavePanelAccessoryView *accessoryView = (SavePanelAccessoryView *)self.savePanel.accessoryView;
+            [accessoryView.fileFormat selectItemWithObjectValue:pathExtension];
+        }
+    }
+    
+    if ([self.savePanel runModal] == NSFileHandlingPanelOKButton) {
+        NSURL *savePath = [self.savePanel URL];
+        if ([[savePath pathExtension] isEqualToString:@"pdf"]) {
+            [self saveAsPdf:savePath];
+        }
+        else {
+            [self saveAsHtml:savePath];
+        }
+    };
+}
+
+- (void)saveAsHtml:(NSURL *)savePath
+{
+    NSString *html = self.webView.stringHtml;
+    if ([html writeToURL:savePath atomically:YES encoding:NSUTF8StringEncoding error:nil]) {
+        self.savedPath = savePath;
+    }
+}
+
+- (void)saveAsPdf:(NSURL *)savePath
+{
+    NSMutableDictionary* pd = [NSMutableDictionary
+                               dictionaryWithDictionary:[[NSPrintInfo sharedPrintInfo] dictionary]];
+    [pd setObject:NSPrintSaveJob forKey:NSPrintJobDisposition];
+    [pd setObject:savePath forKey:NSPrintJobSavingURL];
+    
+    NSPrintInfo* pi = [[NSPrintInfo alloc] initWithDictionary:pd];
+    [pi setHorizontalPagination:NSAutoPagination];
+    [pi setVerticalPagination:NSAutoPagination];
+    [pi setVerticallyCentered:NO];
+    
+    NSPrintOperation* po = [NSPrintOperation printOperationWithView:self.webView.mainFrame.frameView.documentView
+                                                          printInfo:pi];
+    [po setShowsPrintPanel:NO];
+    [po setShowsProgressPanel:NO];
+    
+    if ([po runOperation]) {
+        self.savedPath = savePath;
+    }
+}
+
 #pragma mark - NEWebViewDelegate
 - (BOOL)newebView:(NEWebView *)newebView concludeDroppedFile:(NSURL *)url
 {
@@ -142,6 +216,25 @@ decisionListener:(id<WebPolicyDecisionListener>)listener
     }
     else {
         [listener use];
+    }
+}
+
+#pragma mark - NSComboBoxDelegate
+- (void)comboBoxSelectionDidChange:(NSNotification *)notification;
+{
+    if (notification.object) {
+        NSComboBox *cb = notification.object;
+        NSString *newExtension = [cb itemObjectValueAtIndex:[cb indexOfSelectedItem]];
+        NSString *fileName;
+        if ([[self.savePanel.nameFieldStringValue pathExtension] length]) {
+            fileName = [self.savePanel.nameFieldStringValue stringByDeletingPathExtension];
+        }
+        else {
+            fileName = self.savePanel.nameFieldStringValue;
+        }
+        fileName = [fileName stringByAppendingPathExtension:newExtension];
+        [self.savePanel setNameFieldStringValue:fileName];
+        NSLog(@"%@ -> %@", self.savePanel.nameFieldStringValue, fileName);
     }
 }
 
