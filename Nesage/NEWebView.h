@@ -11,22 +11,16 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 #import <WebKit/WebKit.h>
+
 @class NEWebView;
 @protocol NEWebViewDelegate <NSObject>
 
 - (BOOL)newebView:(NEWebView *)newebView concludeDroppedFile:(NSURL *)url;
-- (void)newebView:(NEWebView *)newebView contentLoaded:(NSURL *)url;
 
 @end
 
 @interface NEWebView : WebView <NSDraggingDestination>
--(void)loadMarkdown:(NSURL *)url;
--(void)reload;
-
--(NSData *)dataWithFileExtension:(NSString *)extension;
--(NSData *)dataAsHtml;
-
 @property (assign) id<NEWebViewDelegate> delegate;
-@property (copy, readonly) NSString *stringHtml;
-@property (copy) NSURL *markdownUrl;
+
+- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)URL;
 @end

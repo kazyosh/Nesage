@@ -9,6 +9,7 @@
 //
 #import <WebKit/WebKit.h>
 
+#import "Document.h"
 #import "NEWebView.h"
 #import "SavePanelAccessoryView.h"
 
@@ -17,7 +18,6 @@
 @interface ViewController()<NSDraggingDestination, NSComboBoxDataSource, NSComboBoxDelegate, NEWebViewDelegate>
 
 @property (weak) IBOutlet NEWebView *webView;
-@property (copy) NSURL* sourcePath;
 @property (copy) NSURL* savedPath;
 @property FSEventStreamRef fseventStream;
 @property (strong) NSSavePanel *savePanel;
@@ -25,11 +25,45 @@
 
 @implementation ViewController
 
+- (Document *)document
+{
+    return (Document *)[[NSDocumentController sharedDocumentController] documentForWindow:[[self view] window]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.webView.delegate = self;
     [self loadInitialHtml];
+}
+
+- (void)viewWillAppear
+{
+    [super viewWillAppear];
+    Document *doc = [self document];
+    if (doc.fileURL) {
+        NSLog(@"%@", doc.fileURL.description);
+        [self.webView loadHTMLString:[self document].htmlString baseURL:[self document].fileURL];
+    }
+    [doc addObserver:self forKeyPath:@"markdownData" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)viewWillDisappear
+{
+    [[self document] removeObserver:self forKeyPath:@"markdownData"];
+    [super viewWillDisappear];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqual:@"markdownData"]) {
+        dispatch_async(
+                       dispatch_get_main_queue(),
+                       ^{
+                           [self.webView loadHTMLString:[self document].htmlString baseURL:[self document].fileURL];
+                       }
+                       );
+    }
 }
 
 - (void)loadInitialHtml {
@@ -40,75 +74,11 @@
 }
 
 #pragma mark - Menu Actions
-- (void)openDocument:(id)sender {
-    NSOpenPanel *panel = [NSOpenPanel openPanel];
-    panel.canChooseFiles = YES;
-    panel.canChooseDirectories = NO;
-    panel.resolvesAliases = YES;
-    panel.allowedFileTypes = @[@"md"];
-    if ([panel runModal] == NSFileHandlingPanelOKButton) {
-        NSArray* urls = [panel URLs];
-        self.sourcePath = [urls objectAtIndex:0];
-        [self.webView loadMarkdown:self.sourcePath];
-    };
-}
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
 
     // Update the view, if already loaded.
-}
-
-
-- (void)startFileUpdateOvserving
-{
-    CFStringRef mypath = (__bridge CFStringRef)([self.sourcePath path]);
-    CFArrayRef pathsToWatch = CFArrayCreate(NULL, (const void **)&mypath, 1, NULL);
-    FSEventStreamContext context = {0, (__bridge void *)(self), NULL, NULL, NULL};
-    CFAbsoluteTime latency = 3.0; /* Latency in seconds */
-    
-    /* Create the stream, passing in a callback */
-    self.fseventStream = FSEventStreamCreate(NULL,
-                                             &fseventCallbak,
-                                             &context,
-                                             pathsToWatch,
-                                             kFSEventStreamEventIdSinceNow, /* Or a previous event ID */
-                                             latency,
-                                             kFSEventStreamCreateFlagFileEvents /* Flags explained in reference */
-                                             );
-    FSEventStreamScheduleWithRunLoop(self.fseventStream, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
-    FSEventStreamStart(self.fseventStream);
-}
-
-void fseventCallbak(
-                    ConstFSEventStreamRef streamRef,
-                    void *clientCallBackInfo,
-                    size_t numEvents,
-                    void *eventPaths,
-                    const FSEventStreamEventFlags eventFlags[],
-                    const FSEventStreamEventId eventIds[])
-{
-    int i;
-    char **paths = eventPaths;
-    
-    // printf("Callback called\n");
-    for (i=0; i<numEvents; i++) {
-        /* flags are unsigned long, IDs are uint64_t */
-        printf("Change %llu in %s, flags %u\n", eventIds[i], paths[i], (unsigned int)eventFlags[i]);
-    }
-    
-    ViewController *vc = (__bridge ViewController *)clientCallBackInfo;
-    [vc.webView reload];
-}
-
-- (void)performClose:(id)sender {
-    if (self.fseventStream) {
-        FSEventStreamStop(self.fseventStream);
-        FSEventStreamInvalidate(self.fseventStream);
-        FSEventStreamRelease(self.fseventStream);
-        self.fseventStream = NULL;
-    }
-    [self loadInitialHtml];
 }
 
 - (void)exportDocument:(id)sender {
@@ -131,55 +101,24 @@ void fseventCallbak(
     if ([self.savePanel runModal] == NSFileHandlingPanelOKButton) {
         NSURL *savePath = [self.savePanel URL];
         if ([[savePath pathExtension] isEqualToString:@"pdf"]) {
-            [self saveAsPdf:savePath];
+            [[self document] exportAsPdf:self.webView.mainFrame.frameView.documentView
+                               exportURL:[self.savePanel URL]];
         }
         else {
-            [self saveAsHtml:savePath];
+            [[self document] exportAsHtml:[self.savePanel URL]];
         }
     };
-}
-
-- (void)saveAsHtml:(NSURL *)savePath
-{
-    NSString *html = self.webView.stringHtml;
-    if ([html writeToURL:savePath atomically:YES encoding:NSUTF8StringEncoding error:nil]) {
-        self.savedPath = savePath;
-    }
-}
-
-- (void)saveAsPdf:(NSURL *)savePath
-{
-    NSMutableDictionary* pd = [NSMutableDictionary
-                               dictionaryWithDictionary:[[NSPrintInfo sharedPrintInfo] dictionary]];
-    [pd setObject:NSPrintSaveJob forKey:NSPrintJobDisposition];
-    [pd setObject:savePath forKey:NSPrintJobSavingURL];
-    
-    NSPrintInfo* pi = [[NSPrintInfo alloc] initWithDictionary:pd];
-    [pi setHorizontalPagination:NSAutoPagination];
-    [pi setVerticalPagination:NSAutoPagination];
-    [pi setVerticallyCentered:NO];
-    
-    NSPrintOperation* po = [NSPrintOperation printOperationWithView:self.webView.mainFrame.frameView.documentView
-                                                          printInfo:pi];
-    [po setShowsPrintPanel:NO];
-    [po setShowsProgressPanel:NO];
-    
-    if ([po runOperation]) {
-        self.savedPath = savePath;
-    }
 }
 
 #pragma mark - NEWebViewDelegate
 - (BOOL)newebView:(NEWebView *)newebView concludeDroppedFile:(NSURL *)url
 {
-    return YES;
-}
-
-- (void)newebView:(NEWebView *)newebView contentLoaded:(NSURL *)url
-{
-    self.sourcePath = url;
-    self.view.window.title = [self.sourcePath lastPathComponent];
-    [self startFileUpdateOvserving];
+    if ([url.pathExtension isEqualToString:@"md"]) {
+        [self document].fileURL = url;
+        self.view.window.title = [url lastPathComponent];
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - webView delegates
@@ -211,7 +150,7 @@ decisionListener:(id<WebPolicyDecisionListener>)listener
         [listener ignore];
     }
     else if (navigationType == WebNavigationTypeReload) {
-        [self.webView reload];
+        [self.webView loadHTMLString:[self document].htmlString baseURL:[self document].fileURL];
         [listener ignore];
     }
     else {

@@ -11,7 +11,11 @@
 #import <Cocoa/Cocoa.h>
 
 @interface Document : NSDocument
+@property (copy) NSData *markdownData;
+@property (readonly, copy) NSString *htmlString;
+@property (copy) NSURL *exportURL;
 
-
+- (void)exportAsHtml:(NSURL *)exportURL;
+- (void)exportAsPdf:(NSView *)view exportURL:(NSURL *)exportURL;
 @end
 

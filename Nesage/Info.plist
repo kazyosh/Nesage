@@ -9,7 +9,7 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>nes</string>
+				<string>md</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string></string>
@@ -17,7 +17,7 @@
 			<string>DocumentType</string>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
-				<string>????</string>
+				<string>Markdown Document</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
@@ -51,5 +51,7 @@
 	<string>Main</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 </dict>
 </plist>
