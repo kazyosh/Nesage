@@ -8,7 +8,7 @@
 // http://opensource.org/licenses/mit-license.php
 //
 
-#import "MMMarkdown/MMMarkdown.h"
+#import "SoldoutWrapper.h"
 #import "Document.h"
 
 @interface Document ()
@@ -19,15 +19,13 @@
 
 - (NSString *)htmlString
 {
-    NSString *markdown   = [[NSString alloc] initWithData:self.markdownData encoding:NSUTF8StringEncoding];
+    NSString *soldouted = [SoldoutWrapper htmlWithData:self.markdownData];
+    NSLog(@"%@", soldouted);
     NSString *htmlString1 = @"<!DOCTYPE html>\n";
     NSString *htmlString2 = [NSString stringWithFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n</head>\n<body>\n",
                              self.fileURL.lastPathComponent] ;
     NSString *htmlString3 = @"</body></html>";
-    NSString *converted = [MMMarkdown HTMLStringWithMarkdown:markdown
-                                                  extensions:MMMarkdownExtensionsGitHubFlavored
-                                                       error:NULL];
-    return [NSString stringWithFormat:@"%@%@%@%@", htmlString1, htmlString2, converted, htmlString3];
+    return [NSString stringWithFormat:@"%@%@%@%@", htmlString1, htmlString2, soldouted, htmlString3];
 }
 
 - (instancetype)init {

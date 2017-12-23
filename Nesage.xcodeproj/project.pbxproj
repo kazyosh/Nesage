@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		152DD2DA1FE9D505000A734F /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2CF1FE9D504000A734F /* array.c */; };
+		152DD2DB1FE9D505000A734F /* renderers.c in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2D01FE9D504000A734F /* renderers.c */; };
+		152DD2DD1FE9D505000A734F /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2D41FE9D505000A734F /* markdown.c */; };
+		152DD2DE1FE9D505000A734F /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2D51FE9D505000A734F /* buffer.c */; };
+		152DD2E41FEDDC6C000A734F /* SoldoutWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2E31FEDDC6C000A734F /* SoldoutWrapper.m */; };
+		152DD2E71FEDEC51000A734F /* NEWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2E61FEDEC51000A734F /* NEWindow.m */; };
 		300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */; };
 		300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */; };
 		30600E0B1CB9C223004D722C /* MMMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30600E0A1CB9C223004D722C /* MMMarkdown.framework */; };
@@ -41,6 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		152DD2CE1FE9D504000A734F /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = libsoldout/buffer.h; sourceTree = SOURCE_ROOT; };
+		152DD2CF1FE9D504000A734F /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = array.c; path = libsoldout/array.c; sourceTree = SOURCE_ROOT; };
+		152DD2D01FE9D504000A734F /* renderers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = renderers.c; path = libsoldout/renderers.c; sourceTree = SOURCE_ROOT; };
+		152DD2D11FE9D504000A734F /* renderers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = renderers.h; path = libsoldout/renderers.h; sourceTree = SOURCE_ROOT; };
+		152DD2D31FE9D505000A734F /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = array.h; path = libsoldout/array.h; sourceTree = SOURCE_ROOT; };
+		152DD2D41FE9D505000A734F /* markdown.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = markdown.c; path = libsoldout/markdown.c; sourceTree = SOURCE_ROOT; };
+		152DD2D51FE9D505000A734F /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = buffer.c; path = libsoldout/buffer.c; sourceTree = SOURCE_ROOT; };
+		152DD2D61FE9D505000A734F /* markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = markdown.h; path = libsoldout/markdown.h; sourceTree = SOURCE_ROOT; };
+		152DD2E21FEDDC6C000A734F /* SoldoutWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoldoutWrapper.h; sourceTree = "<group>"; };
+		152DD2E31FEDDC6C000A734F /* SoldoutWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoldoutWrapper.m; sourceTree = "<group>"; };
+		152DD2E51FEDEC51000A734F /* NEWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEWindow.h; sourceTree = "<group>"; };
+		152DD2E61FEDEC51000A734F /* NEWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEWindow.m; sourceTree = "<group>"; };
 		300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePanelAccessoryView.h; sourceTree = "<group>"; };
 		300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePanelAccessoryView.m; sourceTree = "<group>"; };
 		300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavePanelAccessoryView.xib; sourceTree = "<group>"; };
@@ -95,6 +113,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152DD2CD1FE9D48E000A734F /* libsoldout */ = {
+			isa = PBXGroup;
+			children = (
+				152DD2CF1FE9D504000A734F /* array.c */,
+				152DD2D31FE9D505000A734F /* array.h */,
+				152DD2D51FE9D505000A734F /* buffer.c */,
+				152DD2CE1FE9D504000A734F /* buffer.h */,
+				152DD2D41FE9D505000A734F /* markdown.c */,
+				152DD2D61FE9D505000A734F /* markdown.h */,
+				152DD2D01FE9D504000A734F /* renderers.c */,
+				152DD2D11FE9D504000A734F /* renderers.h */,
+			);
+			name = libsoldout;
+			sourceTree = "<group>";
+		};
 		3093757B1CB714A000A68F8E = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +153,7 @@
 		309375861CB714A100A68F8E /* Nesage */ = {
 			isa = PBXGroup;
 			children = (
+				152DD2CD1FE9D48E000A734F /* libsoldout */,
 				300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */,
 				300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */,
 				300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */,
@@ -131,10 +165,14 @@
 				3093758E1CB714A100A68F8E /* ViewController.m */,
 				309375901CB714A100A68F8E /* Document.h */,
 				309375911CB714A100A68F8E /* Document.m */,
+				152DD2E21FEDDC6C000A734F /* SoldoutWrapper.h */,
+				152DD2E31FEDDC6C000A734F /* SoldoutWrapper.m */,
 				309375931CB714A200A68F8E /* Assets.xcassets */,
 				309375951CB714A200A68F8E /* Main.storyboard */,
 				309375981CB714A200A68F8E /* Info.plist */,
 				3093758A1CB714A100A68F8E /* Supporting Files */,
+				152DD2E51FEDEC51000A734F /* NEWindow.h */,
+				152DD2E61FEDEC51000A734F /* NEWindow.m */,
 			);
 			path = Nesage;
 			sourceTree = "<group>";
@@ -323,11 +361,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				152DD2E71FEDEC51000A734F /* NEWindow.m in Sources */,
 				309375C31CB71CA100A68F8E /* NEWebView.m in Sources */,
 				309375921CB714A100A68F8E /* Document.m in Sources */,
 				3093758F1CB714A100A68F8E /* ViewController.m in Sources */,
 				300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */,
 				3093758C1CB714A100A68F8E /* main.m in Sources */,
+				152DD2DD1FE9D505000A734F /* markdown.c in Sources */,
+				152DD2E41FEDDC6C000A734F /* SoldoutWrapper.m in Sources */,
+				152DD2DA1FE9D505000A734F /* array.c in Sources */,
+				152DD2DB1FE9D505000A734F /* renderers.c in Sources */,
+				152DD2DE1FE9D505000A734F /* buffer.c in Sources */,
 				309375891CB714A100A68F8E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

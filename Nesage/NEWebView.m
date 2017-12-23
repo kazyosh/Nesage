@@ -10,7 +10,7 @@
 
 #import "NEWebView.h"
 
-@interface NEWebView() <WebFrameLoadDelegate>
+@interface NEWebView() <WebFrameLoadDelegate, NSDraggingDestination>
 {
     CGPoint _savedPosition;
 }
@@ -18,7 +18,9 @@
 @end
 @implementation NEWebView
 - (void)awakeFromNib {
-    [self registerForDraggedTypes:@[NSPasteboardURLReadingFileURLsOnlyKey]];
+    NSMutableArray *array = [[NSMutableArray alloc] initWithArray:[NSFilePromiseReceiver readableDraggedTypes]];
+    [array addObject: NSURLPboardType];
+    [self registerForDraggedTypes:array];
     self.frameLoadDelegate = self;
 }
 
@@ -28,17 +30,6 @@
         [self rememberScrollPosition];
     }
     [self.mainFrame loadHTMLString:string baseURL:URL];
-}
-
-- (void)concludeDragOperation:(id<NSDraggingInfo>)sender {
-    NSPasteboard* board = [sender draggingPasteboard];
-    NSArray* files = [board propertyListForType:NSFilenamesPboardType];
-    if ([files count]) {
-        NSURL *url = [NSURL fileURLWithPath:[files objectAtIndex:0]];
-        if (self.delegate) {
-            [self.delegate newebView:self concludeDroppedFile:url];
-        }
-    }
 }
 
 - (void)rememberScrollPosition {
@@ -61,4 +52,44 @@
     }
 }
 
+#pragma mark - Drag&Drop
+- (BOOL)prepareForDragOperation:(id<NSDraggingInfo>)sender {
+    NSPasteboard* board = [sender draggingPasteboard];
+    NSArray* files = [board propertyListForType:NSFilenamesPboardType];
+    if ([files count]) {
+        NSURL *url = [NSURL fileURLWithPath:[files objectAtIndex:0]];
+        if ([[url pathExtension] isEqualToString:@"md"]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (void)concludeDragOperation:(id<NSDraggingInfo>)sender {
+    NSPasteboard* board = [sender draggingPasteboard];
+    NSArray* files = [board propertyListForType:NSFilenamesPboardType];
+    if ([files count]) {
+        NSURL *url = [NSURL fileURLWithPath:[files objectAtIndex:0]];
+        if (self.delegate) {
+            [self.delegate newebView:self concludeDroppedFile:url];
+        }
+    }
+}
+
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender{
+    NSLog(@"entered");
+    return NSDragOperationCopy;
+    
+}
+
+- (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender{
+    return NSDragOperationCopy;
+    
+}
+
+
+- (void)draggingExited:(id <NSDraggingInfo>)sender{
+    NSLog(@"exited");
+    
+}
 @end
