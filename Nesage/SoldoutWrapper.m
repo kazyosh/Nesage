@@ -22,7 +22,7 @@
     ib = bufnew([data length]);
     bufput(ib, [data bytes], [data length]);
     struct buf *ob = bufnew(OUTPUT_UNIT);
-    markdown(ob, ib, &nat_html);
+    markdown(ob, ib, &discount_html);
     return [NSString stringWithCString:ob->data encoding:NSUTF8StringEncoding];
 }
 @end
