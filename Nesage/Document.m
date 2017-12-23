@@ -13,6 +13,7 @@
 
 @interface Document ()
 @property FSEventStreamRef fseventStream;
+@property NSString *css;
 @end
 
 @implementation Document
@@ -22,8 +23,8 @@
     NSString *soldouted = [SoldoutWrapper htmlWithData:self.markdownData];
     NSLog(@"%@", soldouted);
     NSString *htmlString1 = @"<!DOCTYPE html>\n";
-    NSString *htmlString2 = [NSString stringWithFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n</head>\n<body>\n",
-                             self.fileURL.lastPathComponent] ;
+    NSString *htmlString2 = [NSString stringWithFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n<style type=\"text/css\">\n%@\n</style>\n</head>\n<body>\n",
+                             self.fileURL.lastPathComponent, self.css] ;
     NSString *htmlString3 = @"</body></html>";
     return [NSString stringWithFormat:@"%@%@%@%@", htmlString1, htmlString2, soldouted, htmlString3];
 }
@@ -31,7 +32,14 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        // Add your subclass-specific initialization here.
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"github"
+                                                         ofType:@"css"];
+        NSError *error;
+        self.css = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            self.css = @"";
+        }
     }
     return self;
 }

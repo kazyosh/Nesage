@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SoldoutWrapper.h"
 
 @interface NesageTests : XCTestCase
 
@@ -25,6 +26,11 @@
 }
 
 - (void)testExample {
+    NSString *string = @"# ヘッダ";
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *html = [SoldoutWrapper htmlWithData:data];
+    NSLog(@"%@", html);
+    XCTAssertTrue([@"<h1>ããã</h1>" isEqualToString:html]);
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }

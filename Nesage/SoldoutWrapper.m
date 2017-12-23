@@ -23,6 +23,6 @@
     bufput(ib, [data bytes], [data length]);
     struct buf *ob = bufnew(OUTPUT_UNIT);
     markdown(ob, ib, &nat_html);
-    return [NSString stringWithCString:ob->data encoding:kCFStringEncodingUTF8];
+    return [NSString stringWithCString:ob->data encoding:NSUTF8StringEncoding];
 }
 @end
