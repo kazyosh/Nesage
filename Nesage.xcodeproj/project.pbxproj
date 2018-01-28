@@ -16,7 +16,6 @@
 		152DD2E91FEDFF60000A734F /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 152DD2E81FEDFF60000A734F /* github.css */; };
 		300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */; };
 		300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */; };
-		30600E0B1CB9C223004D722C /* MMMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30600E0A1CB9C223004D722C /* MMMarkdown.framework */; };
 		309375891CB714A100A68F8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309375881CB714A100A68F8E /* AppDelegate.m */; };
 		3093758C1CB714A100A68F8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3093758B1CB714A100A68F8E /* main.m */; };
 		3093758F1CB714A100A68F8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3093758E1CB714A100A68F8E /* ViewController.m */; };
@@ -64,7 +63,6 @@
 		300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePanelAccessoryView.h; sourceTree = "<group>"; };
 		300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePanelAccessoryView.m; sourceTree = "<group>"; };
 		300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavePanelAccessoryView.xib; sourceTree = "<group>"; };
-		30600E0A1CB9C223004D722C /* MMMarkdown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMMarkdown.framework; path = Carthage/Build/Mac/MMMarkdown.framework; sourceTree = "<group>"; };
 		309375841CB714A100A68F8E /* Nesage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nesage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		309375871CB714A100A68F8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		309375881CB714A100A68F8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30600E0B1CB9C223004D722C /* MMMarkdown.framework in Frameworks */,
 				309375C01CB7185900A68F8E /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,7 +130,6 @@
 		3093757B1CB714A000A68F8E = {
 			isa = PBXGroup;
 			children = (
-				30600E0A1CB9C223004D722C /* MMMarkdown.framework */,
 				309375BF1CB7185900A68F8E /* WebKit.framework */,
 				309375861CB714A100A68F8E /* Nesage */,
 				309375A01CB714A200A68F8E /* NesageTests */,
