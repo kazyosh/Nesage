@@ -24,8 +24,7 @@
     self.frameLoadDelegate = self;
 }
 
-- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)URL;
-{
+- (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)URL {
     if ([self.mainFrameURL length]) {
         [self rememberScrollPosition];
     }

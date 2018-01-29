@@ -221,7 +221,6 @@
 				309375801CB714A100A68F8E /* Sources */,
 				309375811CB714A100A68F8E /* Frameworks */,
 				309375821CB714A100A68F8E /* Resources */,
-				30600E0C1CB9C6BD004D722C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -338,23 +337,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		30600E0C1CB9C6BD004D722C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/MMMarkdown.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		309375801CB714A100A68F8E /* Sources */ = {
