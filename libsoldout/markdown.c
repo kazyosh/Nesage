@@ -919,7 +919,30 @@ prefix_code(char *data, size_t size) {
 	if (size > 0 && data[0] == '\t') return 1;
 	if (size > 3 && data[0] == ' ' && data[1] == ' '
 			&& data[2] == ' ' && data[3] == ' ') return 4;
-	return 0; }
+    return 0; }
+
+static size_t
+prefix_tilde(char *data, size_t size) {
+    size_t i = 0;
+    if (i < size && data[i] == '`') {
+        i += 1;
+        if (i < size && data[i] == '`') i += 1;
+        if (i < size && data[i] == '`') i += 1;
+        if (i > 0) {
+            while (i < size && data[i] != '\n') i += 1;
+            i++;
+        }
+    }
+    else {
+        if (i < size && data[i] == '~') i += 1;
+        if (i < size && data[i] == '~') i += 1;
+        if (i < size && data[i] == '~') i += 1;
+        if (i < size && data[i] == '\n') i += 1;
+        if (i < 4) {
+            return 0;
+        }
+    }
+    return i; }
 
 /* prefix_oli • returns ordered list item prefix */
 static size_t
@@ -1083,6 +1106,45 @@ parse_blockcode(struct buf *ob, struct render *rndr,
 	release_work_buffer(rndr, work);
 	return beg; }
 
+static size_t
+parse_tilde_blockcode(struct buf *ob, struct render *rndr,
+                char *data, size_t size) {
+    size_t beg, end, pre = 0;
+    struct buf *work = new_work_buffer(rndr);
+    char *lang = NULL;
+
+    size_t pcount = 0;
+    beg = 0;
+    while (beg < size) {
+        for (end = beg + 1; end < size && data[end - 1] != '\n';
+             end += 1);
+        pre = prefix_tilde(data + beg, end - beg);
+        if (pre) {
+            if ((pre > 4) && (lang == NULL)) {
+                lang = &data[beg+3];
+            }
+            beg += pre; /* skipping prefix */
+            pcount++; }
+        if (pcount >= 2)
+            break;
+        if (beg < end) {
+            if (is_empty(data + beg, end - beg))
+                bufputc(work, '\n');
+            else bufput(work, data + beg, end - beg); }
+        beg = end;
+    }
+    
+    while (work->size && work->data[work->size - 1] == '\n')
+        work->size -= 1;
+    bufputc(work, '\n');
+    if ((rndr->make.tildeblockcode) && lang)
+        rndr->make.tildeblockcode(lang, ob, work, rndr->make.opaque);
+    else {
+        if (rndr->make.blockcode)
+            rndr->make.blockcode(ob, work, rndr->make.opaque);
+    }
+    release_work_buffer(rndr, work);
+    return beg; }
 
 /* parse_listitem • parsing of a single list item */
 /*	assuming initial prefix is already removed */
@@ -1549,6 +1611,8 @@ parse_block(struct buf *ob, struct render *rndr,
 			beg += parse_blockquote(ob, rndr, txt_data, end);
 		else if (prefix_code(txt_data, end))
 			beg += parse_blockcode(ob, rndr, txt_data, end);
+        else if (prefix_tilde(txt_data, end))
+            beg += parse_tilde_blockcode(ob, rndr, txt_data, end);
 		else if (prefix_uli(txt_data, end))
 			beg += parse_list(ob, rndr, txt_data, end, 0);
 		else if (prefix_oli(txt_data, end))
