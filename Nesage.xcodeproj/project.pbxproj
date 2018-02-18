@@ -14,6 +14,11 @@
 		152DD2E41FEDDC6C000A734F /* SoldoutWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2E31FEDDC6C000A734F /* SoldoutWrapper.m */; };
 		152DD2E71FEDEC51000A734F /* NEWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2E61FEDEC51000A734F /* NEWindow.m */; };
 		152DD2E91FEDFF60000A734F /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 152DD2E81FEDFF60000A734F /* github.css */; };
+		157AD3BB203647A4005562B8 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 157AD3B5203647A3005562B8 /* styles */; };
+		157AD3BC203647A4005562B8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 157AD3B6203647A3005562B8 /* LICENSE */; };
+		157AD3C2203648F7005562B8 /* HighlightJsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 157AD3C1203648F7005562B8 /* HighlightJsWrapper.m */; };
+		1599D6462039381F0005FA9C /* highlight.pack.js in Resources */ = {isa = PBXBuildFile; fileRef = 1599D6452039381F0005FA9C /* highlight.pack.js */; };
+		15F11FF12037ED3B00D92016 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */; };
 		300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */; };
 		300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */; };
 		309375891CB714A100A68F8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 309375881CB714A100A68F8E /* AppDelegate.m */; };
@@ -60,6 +65,12 @@
 		152DD2E51FEDEC51000A734F /* NEWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEWindow.h; sourceTree = "<group>"; };
 		152DD2E61FEDEC51000A734F /* NEWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEWindow.m; sourceTree = "<group>"; };
 		152DD2E81FEDFF60000A734F /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.css; sourceTree = "<group>"; };
+		157AD3B5203647A3005562B8 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = highlight.js/styles; sourceTree = SOURCE_ROOT; };
+		157AD3B6203647A3005562B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = highlight.js/LICENSE; sourceTree = SOURCE_ROOT; };
+		157AD3C0203648F7005562B8 /* HighlightJsWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HighlightJsWrapper.h; sourceTree = "<group>"; };
+		157AD3C1203648F7005562B8 /* HighlightJsWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HighlightJsWrapper.m; sourceTree = "<group>"; };
+		1599D6452039381F0005FA9C /* highlight.pack.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = highlight.pack.js; path = highlight.js/highlight.pack.js; sourceTree = SOURCE_ROOT; };
+		15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePanelAccessoryView.h; sourceTree = "<group>"; };
 		300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePanelAccessoryView.m; sourceTree = "<group>"; };
 		300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SavePanelAccessoryView.xib; sourceTree = "<group>"; };
@@ -91,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15F11FF12037ED3B00D92016 /* JavaScriptCore.framework in Frameworks */,
 				309375C01CB7185900A68F8E /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +139,24 @@
 			name = libsoldout;
 			sourceTree = "<group>";
 		};
+		157AD3B32036477D005562B8 /* highlight.js */ = {
+			isa = PBXGroup;
+			children = (
+				1599D6452039381F0005FA9C /* highlight.pack.js */,
+				157AD3B6203647A3005562B8 /* LICENSE */,
+				157AD3B5203647A3005562B8 /* styles */,
+			);
+			name = highlight.js;
+			sourceTree = "<group>";
+		};
+		15F11FEF2037ED3A00D92016 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3093757B1CB714A000A68F8E = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +165,7 @@
 				309375A01CB714A200A68F8E /* NesageTests */,
 				309375AB1CB714A300A68F8E /* NesageUITests */,
 				309375851CB714A100A68F8E /* Products */,
+				15F11FEF2037ED3A00D92016 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +182,7 @@
 		309375861CB714A100A68F8E /* Nesage */ = {
 			isa = PBXGroup;
 			children = (
+				157AD3B32036477D005562B8 /* highlight.js */,
 				152DD2CD1FE9D48E000A734F /* libsoldout */,
 				300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */,
 				300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */,
@@ -171,6 +203,8 @@
 				3093758A1CB714A100A68F8E /* Supporting Files */,
 				152DD2E51FEDEC51000A734F /* NEWindow.h */,
 				152DD2E61FEDEC51000A734F /* NEWindow.m */,
+				157AD3C0203648F7005562B8 /* HighlightJsWrapper.h */,
+				157AD3C1203648F7005562B8 /* HighlightJsWrapper.m */,
 			);
 			path = Nesage;
 			sourceTree = "<group>";
@@ -315,10 +349,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				309375941CB714A200A68F8E /* Assets.xcassets in Resources */,
+				157AD3BB203647A4005562B8 /* styles in Resources */,
+				157AD3BC203647A4005562B8 /* LICENSE in Resources */,
 				152DD2E91FEDFF60000A734F /* github.css in Resources */,
 				300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */,
 				309375BE1CB717EC00A68F8E /* index.html in Resources */,
 				309375971CB714A200A68F8E /* Main.storyboard in Resources */,
+				1599D6462039381F0005FA9C /* highlight.pack.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +387,7 @@
 				300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */,
 				3093758C1CB714A100A68F8E /* main.m in Sources */,
 				152DD2DD1FE9D505000A734F /* markdown.c in Sources */,
+				157AD3C2203648F7005562B8 /* HighlightJsWrapper.m in Sources */,
 				152DD2E41FEDDC6C000A734F /* SoldoutWrapper.m in Sources */,
 				152DD2DA1FE9D505000A734F /* array.c in Sources */,
 				152DD2DB1FE9D505000A734F /* renderers.c in Sources */,

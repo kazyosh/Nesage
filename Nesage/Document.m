@@ -2,7 +2,7 @@
 //  Document.m
 //  Nesage
 //
-// Copyright (c) 2016 kazyosh
+// Copyright (c) 2018 kazyosh
 //
 // This software is released under the MIT License.
 // http://opensource.org/licenses/mit-license.php
@@ -14,6 +14,7 @@
 @interface Document ()
 @property FSEventStreamRef fseventStream;
 @property NSString *css;
+@property NSString *cssHilightJs;
 @end
 
 @implementation Document
@@ -22,11 +23,12 @@
 {
     NSString *soldouted = [SoldoutWrapper htmlWithData:self.markdownData];
     NSLog(@"%@", soldouted);
-    NSString *htmlString1 = @"<!DOCTYPE html>\n";
-    NSString *htmlString2 = [NSString stringWithFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n<style type=\"text/css\">\n%@\n</style>\n</head>\n<body>\n",
-                             self.fileURL.lastPathComponent, self.css] ;
-    NSString *htmlString3 = @"</body></html>";
-    return [NSString stringWithFormat:@"%@%@%@%@", htmlString1, htmlString2, soldouted, htmlString3];
+    NSString *htmlDocType = @"<!DOCTYPE html>\n";
+    NSString *htmlHeadStart = [NSString stringWithFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n", self.fileURL.lastPathComponent];
+    NSString *htmlStyle = [NSString stringWithFormat:@"<style type=\"text/css\">%@</style>\n<style type=\"text/css\">%@</style>\n", self.css, self.cssHilightJs];
+    NSString *htmlHeadEnd = @"</head>\n";
+    NSString *htmlBody = [NSString stringWithFormat:@"<body>\n%@</body></html>", soldouted];
+    return [NSString stringWithFormat:@"%@%@%@%@%@", htmlDocType, htmlHeadStart, htmlStyle, htmlHeadEnd, htmlBody];
 }
 
 - (instancetype)init {
@@ -39,6 +41,13 @@
         if (error) {
             NSLog(@"%@", error.localizedDescription);
             self.css = @"";
+        }
+        path = [[NSBundle mainBundle] pathForResource:@"styles/github"
+                                                         ofType:@"css"];
+        self.cssHilightJs = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            self.cssHilightJs = @"";
         }
     }
     return self;

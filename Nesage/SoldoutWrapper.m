@@ -12,12 +12,12 @@
 #include "renderers.h"
 #include "buffer.h"
 
+#import "HighlightJsWrapper.h"
 #import "SoldoutWrapper.h"
 
 #define OUTPUT_UNIT 64
 
 void tildeblockcode(char* lang, struct buf *ob, struct buf *text, void *opaque) {
-    NSUInteger len = text->size;
     NSString *langString = [NSString string];
     if (lang) {
         int ii = 0;
@@ -25,13 +25,17 @@ void tildeblockcode(char* lang, struct buf *ob, struct buf *text, void *opaque) 
             langString = [langString stringByAppendingFormat:@"%c", lang[ii]];
             ii++;
         }
+        NSString *string = [[NSString alloc] initWithBytes:text->data length:text->size encoding:NSUTF8StringEncoding];
+        NSString *highlighted = [[HighlightJsWrapper sharedInstance] hilight:string language:langString];
+        if (ob->size) bufputc(ob, '\n');
+        NSString *precode = [NSString stringWithFormat:@"<pre><code class=\"%@\">", langString];
+        BUFPUTSL(ob, precode.UTF8String);
+        bufput(ob, [highlighted UTF8String], [highlighted lengthOfBytesUsingEncoding:NSUTF8StringEncoding]);
+        BUFPUTSL(ob, "</code></pre>\n");
     }
-    NSString *string = [[NSString alloc] initWithBytes:text->data length:len encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", string);
-    discount_html.blockcode(ob, text, opaque);
-    len = text->size;
-    string = [[NSString alloc] initWithBytes:text->data length:len encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", string);
+    else {
+        discount_html.blockcode(ob, text, opaque);
+    }
 }
 
 @implementation SoldoutWrapper
