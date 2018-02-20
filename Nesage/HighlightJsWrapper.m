@@ -30,7 +30,6 @@
     if (self) {
         self.context = [[JSContext alloc] init];
         [self.context evaluateScript:@"var window = {};"];
-        [self.context evaluateScript:@"var func = function(n) { return n; }"];
         NSError *error;
         NSString *path = [[NSBundle mainBundle] pathForResource:@"highlight.pack"
                                                ofType:@"js"];
