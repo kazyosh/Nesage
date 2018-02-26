@@ -15,7 +15,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController()<NSDraggingDestination, NSComboBoxDataSource, NSComboBoxDelegate, NEWebViewDelegate>
+@interface ViewController()<NSDraggingDestination, NSComboBoxDataSource, NSComboBoxDelegate, WebPolicyDelegate, NEWebViewDelegate>
 
 @property (weak) IBOutlet NEWebView *webView;
 @property (copy) NSURL* savedPath;
@@ -34,6 +34,7 @@
     [super viewDidLoad];
     
     self.webView.delegate = self;
+    self.webView.policyDelegate = self;
     [self loadInitialHtml];
 }
 
