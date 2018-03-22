@@ -2,8 +2,10 @@
 //  HighlightJs.m
 //  Nesage
 //
-//  Created by Kazuhiro YOSHIDA on 2018/02/16.
-//  Copyright © 2018年 ProSoftware,Inc. All rights reserved.
+// Copyright (c) 2017 kazyosh
+//
+// This software is released under the MIT License.
+// http://opensource.org/licenses/mit-license.php
 //
 
 #import <JavaScriptCore/JavaScriptCore.h>

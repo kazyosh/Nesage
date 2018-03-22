@@ -2,8 +2,10 @@
 //  NEWindow.h
 //  Nesage
 //
-//  Created by Kazuhiro YOSHIDA on 2017/12/23.
-//  Copyright © 2017年 ProSoftware,Inc. All rights reserved.
+// Copyright (c) 2017 kazyosh
+//
+// This software is released under the MIT License.
+// http://opensource.org/licenses/mit-license.php
 //
 
 #import <Cocoa/Cocoa.h>
