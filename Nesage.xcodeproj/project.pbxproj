@@ -7,17 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		152DD2DA1FE9D505000A734F /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2CF1FE9D504000A734F /* array.c */; };
-		152DD2DB1FE9D505000A734F /* renderers.c in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2D01FE9D504000A734F /* renderers.c */; };
-		152DD2DD1FE9D505000A734F /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2D41FE9D505000A734F /* markdown.c */; };
-		152DD2DE1FE9D505000A734F /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2D51FE9D505000A734F /* buffer.c */; };
-		152DD2E41FEDDC6C000A734F /* SoldoutWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2E31FEDDC6C000A734F /* SoldoutWrapper.m */; };
+		15036AE3211A6364005EAC87 /* Nebiki.h in Headers */ = {isa = PBXBuildFile; fileRef = 15036AE1211A6364005EAC87 /* Nebiki.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15036AE6211A6364005EAC87 /* Nebiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15036ADF211A6364005EAC87 /* Nebiki.framework */; };
+		15036AE7211A6364005EAC87 /* Nebiki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15036ADF211A6364005EAC87 /* Nebiki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		15036AEE211A63AC005EAC87 /* Meboshi.m in Sources */ = {isa = PBXBuildFile; fileRef = 15036AEC211A63AB005EAC87 /* Meboshi.m */; };
+		15036AEF211A63AC005EAC87 /* Meboshi.h in Headers */ = {isa = PBXBuildFile; fileRef = 15036AED211A63AC005EAC87 /* Meboshi.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		15036AF5211A642F005EAC87 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 15036AF2211A642F005EAC87 /* LICENSE */; };
+		15036AF6211A642F005EAC87 /* highlight.pack.js in Resources */ = {isa = PBXBuildFile; fileRef = 15036AF3211A642F005EAC87 /* highlight.pack.js */; };
+		15036AF7211A642F005EAC87 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 15036AF4211A642F005EAC87 /* styles */; };
+		15036B00211A64CE005EAC87 /* array.c in Sources */ = {isa = PBXBuildFile; fileRef = 15036AF8211A64CE005EAC87 /* array.c */; };
+		15036B01211A64CE005EAC87 /* array.h in Headers */ = {isa = PBXBuildFile; fileRef = 15036AF9211A64CE005EAC87 /* array.h */; };
+		15036B02211A64CE005EAC87 /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 15036AFA211A64CE005EAC87 /* markdown.c */; };
+		15036B03211A64CE005EAC87 /* buffer.h in Headers */ = {isa = PBXBuildFile; fileRef = 15036AFB211A64CE005EAC87 /* buffer.h */; };
+		15036B04211A64CE005EAC87 /* renderers.c in Sources */ = {isa = PBXBuildFile; fileRef = 15036AFC211A64CE005EAC87 /* renderers.c */; };
+		15036B05211A64CE005EAC87 /* buffer.c in Sources */ = {isa = PBXBuildFile; fileRef = 15036AFD211A64CE005EAC87 /* buffer.c */; };
+		15036B06211A64CE005EAC87 /* renderers.h in Headers */ = {isa = PBXBuildFile; fileRef = 15036AFE211A64CE005EAC87 /* renderers.h */; };
+		15036B07211A64CE005EAC87 /* markdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 15036AFF211A64CE005EAC87 /* markdown.h */; };
+		15036B0C211BB15F005EAC87 /* HighlightJsWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 15036B08211BB15F005EAC87 /* HighlightJsWrapper.h */; };
+		15036B0D211BB15F005EAC87 /* SoldoutWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 15036B09211BB15F005EAC87 /* SoldoutWrapper.h */; };
+		15036B0E211BB15F005EAC87 /* SoldoutWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15036B0A211BB15F005EAC87 /* SoldoutWrapper.m */; };
+		15036B0F211BB15F005EAC87 /* HighlightJsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15036B0B211BB15F005EAC87 /* HighlightJsWrapper.m */; };
 		152DD2E71FEDEC51000A734F /* NEWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2E61FEDEC51000A734F /* NEWindow.m */; };
 		152DD2E91FEDFF60000A734F /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 152DD2E81FEDFF60000A734F /* github.css */; };
-		157AD3BB203647A4005562B8 /* styles in Resources */ = {isa = PBXBuildFile; fileRef = 157AD3B5203647A3005562B8 /* styles */; };
-		157AD3BC203647A4005562B8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 157AD3B6203647A3005562B8 /* LICENSE */; };
-		157AD3C2203648F7005562B8 /* HighlightJsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 157AD3C1203648F7005562B8 /* HighlightJsWrapper.m */; };
-		1599D6462039381F0005FA9C /* highlight.pack.js in Resources */ = {isa = PBXBuildFile; fileRef = 1599D6452039381F0005FA9C /* highlight.pack.js */; };
 		15F11FF12037ED3B00D92016 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */; };
 		300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */; };
 		300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */; };
@@ -35,6 +46,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		15036AE4211A6364005EAC87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3093757C1CB714A100A68F8E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15036ADE211A6364005EAC87;
+			remoteInfo = Nebiki;
+		};
 		3093759E1CB714A200A68F8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3093757C1CB714A100A68F8E /* Project object */;
@@ -51,25 +69,44 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		15036AEB211A6364005EAC87 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15036AE7211A6364005EAC87 /* Nebiki.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		152DD2CE1FE9D504000A734F /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = buffer.h; path = libsoldout/buffer.h; sourceTree = SOURCE_ROOT; };
-		152DD2CF1FE9D504000A734F /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = array.c; path = libsoldout/array.c; sourceTree = SOURCE_ROOT; };
-		152DD2D01FE9D504000A734F /* renderers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = renderers.c; path = libsoldout/renderers.c; sourceTree = SOURCE_ROOT; };
-		152DD2D11FE9D504000A734F /* renderers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = renderers.h; path = libsoldout/renderers.h; sourceTree = SOURCE_ROOT; };
-		152DD2D31FE9D505000A734F /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = array.h; path = libsoldout/array.h; sourceTree = SOURCE_ROOT; };
-		152DD2D41FE9D505000A734F /* markdown.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = markdown.c; path = libsoldout/markdown.c; sourceTree = SOURCE_ROOT; };
-		152DD2D51FE9D505000A734F /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = buffer.c; path = libsoldout/buffer.c; sourceTree = SOURCE_ROOT; };
-		152DD2D61FE9D505000A734F /* markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = markdown.h; path = libsoldout/markdown.h; sourceTree = SOURCE_ROOT; };
-		152DD2E21FEDDC6C000A734F /* SoldoutWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SoldoutWrapper.h; sourceTree = "<group>"; };
-		152DD2E31FEDDC6C000A734F /* SoldoutWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SoldoutWrapper.m; sourceTree = "<group>"; };
+		15036ADF211A6364005EAC87 /* Nebiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nebiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		15036AE1211A6364005EAC87 /* Nebiki.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nebiki.h; sourceTree = "<group>"; };
+		15036AE2211A6364005EAC87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15036AEC211A63AB005EAC87 /* Meboshi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meboshi.m; sourceTree = "<group>"; };
+		15036AED211A63AC005EAC87 /* Meboshi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meboshi.h; sourceTree = "<group>"; };
+		15036AF2211A642F005EAC87 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		15036AF3211A642F005EAC87 /* highlight.pack.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.pack.js; sourceTree = "<group>"; };
+		15036AF4211A642F005EAC87 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = styles; sourceTree = "<group>"; };
+		15036AF8211A64CE005EAC87 /* array.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = array.c; sourceTree = "<group>"; };
+		15036AF9211A64CE005EAC87 /* array.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = array.h; sourceTree = "<group>"; };
+		15036AFA211A64CE005EAC87 /* markdown.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = markdown.c; sourceTree = "<group>"; };
+		15036AFB211A64CE005EAC87 /* buffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = buffer.h; sourceTree = "<group>"; };
+		15036AFC211A64CE005EAC87 /* renderers.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderers.c; sourceTree = "<group>"; };
+		15036AFD211A64CE005EAC87 /* buffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = buffer.c; sourceTree = "<group>"; };
+		15036AFE211A64CE005EAC87 /* renderers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = renderers.h; sourceTree = "<group>"; };
+		15036AFF211A64CE005EAC87 /* markdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = markdown.h; sourceTree = "<group>"; };
+		15036B08211BB15F005EAC87 /* HighlightJsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighlightJsWrapper.h; sourceTree = "<group>"; };
+		15036B09211BB15F005EAC87 /* SoldoutWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoldoutWrapper.h; sourceTree = "<group>"; };
+		15036B0A211BB15F005EAC87 /* SoldoutWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoldoutWrapper.m; sourceTree = "<group>"; };
+		15036B0B211BB15F005EAC87 /* HighlightJsWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighlightJsWrapper.m; sourceTree = "<group>"; };
 		152DD2E51FEDEC51000A734F /* NEWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEWindow.h; sourceTree = "<group>"; };
 		152DD2E61FEDEC51000A734F /* NEWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEWindow.m; sourceTree = "<group>"; };
 		152DD2E81FEDFF60000A734F /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.css; sourceTree = "<group>"; };
-		157AD3B5203647A3005562B8 /* styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = styles; path = highlight.js/styles; sourceTree = SOURCE_ROOT; };
-		157AD3B6203647A3005562B8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = highlight.js/LICENSE; sourceTree = SOURCE_ROOT; };
-		157AD3C0203648F7005562B8 /* HighlightJsWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HighlightJsWrapper.h; sourceTree = "<group>"; };
-		157AD3C1203648F7005562B8 /* HighlightJsWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HighlightJsWrapper.m; sourceTree = "<group>"; };
-		1599D6452039381F0005FA9C /* highlight.pack.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = highlight.pack.js; path = highlight.js/highlight.pack.js; sourceTree = SOURCE_ROOT; };
 		15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePanelAccessoryView.h; sourceTree = "<group>"; };
 		300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePanelAccessoryView.m; sourceTree = "<group>"; };
@@ -98,12 +135,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		15036ADB211A6364005EAC87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		309375811CB714A100A68F8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				15F11FF12037ED3B00D92016 /* JavaScriptCore.framework in Frameworks */,
 				309375C01CB7185900A68F8E /* WebKit.framework in Frameworks */,
+				15036AE6211A6364005EAC87 /* Nebiki.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,29 +169,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		152DD2CD1FE9D48E000A734F /* libsoldout */ = {
+		15036AE0211A6364005EAC87 /* Nebiki */ = {
 			isa = PBXGroup;
 			children = (
-				152DD2CF1FE9D504000A734F /* array.c */,
-				152DD2D31FE9D505000A734F /* array.h */,
-				152DD2D51FE9D505000A734F /* buffer.c */,
-				152DD2CE1FE9D504000A734F /* buffer.h */,
-				152DD2D41FE9D505000A734F /* markdown.c */,
-				152DD2D61FE9D505000A734F /* markdown.h */,
-				152DD2D01FE9D504000A734F /* renderers.c */,
-				152DD2D11FE9D504000A734F /* renderers.h */,
+				15036B08211BB15F005EAC87 /* HighlightJsWrapper.h */,
+				15036B0B211BB15F005EAC87 /* HighlightJsWrapper.m */,
+				15036B09211BB15F005EAC87 /* SoldoutWrapper.h */,
+				15036B0A211BB15F005EAC87 /* SoldoutWrapper.m */,
+				15036AF1211A63FB005EAC87 /* highlight.js */,
+				15036AF0211A63D5005EAC87 /* libsoldout */,
+				15036AED211A63AC005EAC87 /* Meboshi.h */,
+				15036AEC211A63AB005EAC87 /* Meboshi.m */,
+				15036AE1211A6364005EAC87 /* Nebiki.h */,
+				15036AE2211A6364005EAC87 /* Info.plist */,
 			);
-			name = libsoldout;
+			path = Nebiki;
 			sourceTree = "<group>";
 		};
-		157AD3B32036477D005562B8 /* highlight.js */ = {
+		15036AF0211A63D5005EAC87 /* libsoldout */ = {
 			isa = PBXGroup;
 			children = (
-				1599D6452039381F0005FA9C /* highlight.pack.js */,
-				157AD3B6203647A3005562B8 /* LICENSE */,
-				157AD3B5203647A3005562B8 /* styles */,
+				15036AF8211A64CE005EAC87 /* array.c */,
+				15036AF9211A64CE005EAC87 /* array.h */,
+				15036AFD211A64CE005EAC87 /* buffer.c */,
+				15036AFB211A64CE005EAC87 /* buffer.h */,
+				15036AFA211A64CE005EAC87 /* markdown.c */,
+				15036AFF211A64CE005EAC87 /* markdown.h */,
+				15036AFC211A64CE005EAC87 /* renderers.c */,
+				15036AFE211A64CE005EAC87 /* renderers.h */,
 			);
-			name = highlight.js;
+			path = libsoldout;
+			sourceTree = "<group>";
+		};
+		15036AF1211A63FB005EAC87 /* highlight.js */ = {
+			isa = PBXGroup;
+			children = (
+				15036AF3211A642F005EAC87 /* highlight.pack.js */,
+				15036AF2211A642F005EAC87 /* LICENSE */,
+				15036AF4211A642F005EAC87 /* styles */,
+			);
+			path = highlight.js;
 			sourceTree = "<group>";
 		};
 		15F11FEF2037ED3A00D92016 /* Frameworks */ = {
@@ -164,6 +226,7 @@
 				309375861CB714A100A68F8E /* Nesage */,
 				309375A01CB714A200A68F8E /* NesageTests */,
 				309375AB1CB714A300A68F8E /* NesageUITests */,
+				15036AE0211A6364005EAC87 /* Nebiki */,
 				309375851CB714A100A68F8E /* Products */,
 				15F11FEF2037ED3A00D92016 /* Frameworks */,
 			);
@@ -175,6 +238,7 @@
 				309375841CB714A100A68F8E /* Nesage.app */,
 				3093759D1CB714A200A68F8E /* NesageTests.xctest */,
 				309375A81CB714A300A68F8E /* NesageUITests.xctest */,
+				15036ADF211A6364005EAC87 /* Nebiki.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,8 +246,6 @@
 		309375861CB714A100A68F8E /* Nesage */ = {
 			isa = PBXGroup;
 			children = (
-				157AD3B32036477D005562B8 /* highlight.js */,
-				152DD2CD1FE9D48E000A734F /* libsoldout */,
 				300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */,
 				300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */,
 				300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */,
@@ -195,16 +257,12 @@
 				3093758E1CB714A100A68F8E /* ViewController.m */,
 				309375901CB714A100A68F8E /* Document.h */,
 				309375911CB714A100A68F8E /* Document.m */,
-				152DD2E21FEDDC6C000A734F /* SoldoutWrapper.h */,
-				152DD2E31FEDDC6C000A734F /* SoldoutWrapper.m */,
 				309375931CB714A200A68F8E /* Assets.xcassets */,
 				309375951CB714A200A68F8E /* Main.storyboard */,
 				309375981CB714A200A68F8E /* Info.plist */,
 				3093758A1CB714A100A68F8E /* Supporting Files */,
 				152DD2E51FEDEC51000A734F /* NEWindow.h */,
 				152DD2E61FEDEC51000A734F /* NEWindow.m */,
-				157AD3C0203648F7005562B8 /* HighlightJsWrapper.h */,
-				157AD3C1203648F7005562B8 /* HighlightJsWrapper.m */,
 			);
 			path = Nesage;
 			sourceTree = "<group>";
@@ -247,7 +305,43 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		15036ADC211A6364005EAC87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15036B06211A64CE005EAC87 /* renderers.h in Headers */,
+				15036AEF211A63AC005EAC87 /* Meboshi.h in Headers */,
+				15036B0D211BB15F005EAC87 /* SoldoutWrapper.h in Headers */,
+				15036B03211A64CE005EAC87 /* buffer.h in Headers */,
+				15036B01211A64CE005EAC87 /* array.h in Headers */,
+				15036AE3211A6364005EAC87 /* Nebiki.h in Headers */,
+				15036B07211A64CE005EAC87 /* markdown.h in Headers */,
+				15036B0C211BB15F005EAC87 /* HighlightJsWrapper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		15036ADE211A6364005EAC87 /* Nebiki */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15036AEA211A6364005EAC87 /* Build configuration list for PBXNativeTarget "Nebiki" */;
+			buildPhases = (
+				15036ADA211A6364005EAC87 /* Sources */,
+				15036ADB211A6364005EAC87 /* Frameworks */,
+				15036ADC211A6364005EAC87 /* Headers */,
+				15036ADD211A6364005EAC87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nebiki;
+			productName = Nebiki;
+			productReference = 15036ADF211A6364005EAC87 /* Nebiki.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		309375831CB714A100A68F8E /* Nesage */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 309375B11CB714A300A68F8E /* Build configuration list for PBXNativeTarget "Nesage" */;
@@ -255,10 +349,12 @@
 				309375801CB714A100A68F8E /* Sources */,
 				309375811CB714A100A68F8E /* Frameworks */,
 				309375821CB714A100A68F8E /* Resources */,
+				15036AEB211A6364005EAC87 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				15036AE5211A6364005EAC87 /* PBXTargetDependency */,
 			);
 			name = Nesage;
 			productName = Nesage;
@@ -310,6 +406,10 @@
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "ProSoftware,Inc.";
 				TargetAttributes = {
+					15036ADE211A6364005EAC87 = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+					};
 					309375831CB714A100A68F8E = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -339,23 +439,31 @@
 				309375831CB714A100A68F8E /* Nesage */,
 				3093759C1CB714A200A68F8E /* NesageTests */,
 				309375A71CB714A200A68F8E /* NesageUITests */,
+				15036ADE211A6364005EAC87 /* Nebiki */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		15036ADD211A6364005EAC87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15036AF5211A642F005EAC87 /* LICENSE in Resources */,
+				15036AF7211A642F005EAC87 /* styles in Resources */,
+				15036AF6211A642F005EAC87 /* highlight.pack.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		309375821CB714A100A68F8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				309375941CB714A200A68F8E /* Assets.xcassets in Resources */,
-				157AD3BB203647A4005562B8 /* styles in Resources */,
-				157AD3BC203647A4005562B8 /* LICENSE in Resources */,
 				152DD2E91FEDFF60000A734F /* github.css in Resources */,
 				300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */,
 				309375BE1CB717EC00A68F8E /* index.html in Resources */,
 				309375971CB714A200A68F8E /* Main.storyboard in Resources */,
-				1599D6462039381F0005FA9C /* highlight.pack.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +484,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		15036ADA211A6364005EAC87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15036B0E211BB15F005EAC87 /* SoldoutWrapper.m in Sources */,
+				15036AEE211A63AC005EAC87 /* Meboshi.m in Sources */,
+				15036B02211A64CE005EAC87 /* markdown.c in Sources */,
+				15036B0F211BB15F005EAC87 /* HighlightJsWrapper.m in Sources */,
+				15036B04211A64CE005EAC87 /* renderers.c in Sources */,
+				15036B05211A64CE005EAC87 /* buffer.c in Sources */,
+				15036B00211A64CE005EAC87 /* array.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		309375801CB714A100A68F8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,12 +508,6 @@
 				3093758F1CB714A100A68F8E /* ViewController.m in Sources */,
 				300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */,
 				3093758C1CB714A100A68F8E /* main.m in Sources */,
-				152DD2DD1FE9D505000A734F /* markdown.c in Sources */,
-				157AD3C2203648F7005562B8 /* HighlightJsWrapper.m in Sources */,
-				152DD2E41FEDDC6C000A734F /* SoldoutWrapper.m in Sources */,
-				152DD2DA1FE9D505000A734F /* array.c in Sources */,
-				152DD2DB1FE9D505000A734F /* renderers.c in Sources */,
-				152DD2DE1FE9D505000A734F /* buffer.c in Sources */,
 				309375891CB714A100A68F8E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +531,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		15036AE5211A6364005EAC87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15036ADE211A6364005EAC87 /* Nebiki */;
+			targetProxy = 15036AE4211A6364005EAC87 /* PBXContainerItemProxy */;
+		};
 		3093759F1CB714A200A68F8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 309375831CB714A100A68F8E /* Nesage */;
@@ -439,6 +560,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		15036AE8211A6364005EAC87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Nebiki/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.44da.Nebiki;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		15036AE9211A6364005EAC87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Nebiki/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.44da.Nebiki;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		309375AF1CB714A300A68F8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -623,6 +810,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		15036AEA211A6364005EAC87 /* Build configuration list for PBXNativeTarget "Nebiki" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15036AE8211A6364005EAC87 /* Debug */,
+				15036AE9211A6364005EAC87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3093757F1CB714A100A68F8E /* Build configuration list for PBXProject "Nesage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

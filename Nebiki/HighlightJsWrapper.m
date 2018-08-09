@@ -33,7 +33,7 @@
         self.context = [[JSContext alloc] init];
         [self.context evaluateScript:@"var window = {};"];
         NSError *error;
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"highlight.pack"
+        NSString *path = [[NSBundle bundleForClass:[HighlightJsWrapper class]] pathForResource:@"highlight.pack"
                                                ofType:@"js"];
         NSString* script = [NSMutableString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
         if (error) {

@@ -8,7 +8,7 @@
 // http://opensource.org/licenses/mit-license.php
 //
 
-#import "SoldoutWrapper.h"
+#import "Nebiki.h"
 #import "Document.h"
 
 @interface Document ()
@@ -18,37 +18,34 @@
 @end
 
 @implementation Document
-
-- (NSString *)htmlString
-{
-    NSString *soldouted = [SoldoutWrapper htmlWithData:self.markdownData];
-    NSLog(@"%@", soldouted);
-    NSString *htmlDocType = @"<!DOCTYPE html>\n";
-    NSString *htmlHeadStart = [NSString stringWithFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n", self.fileURL.lastPathComponent];
-    NSString *htmlStyle = [NSString stringWithFormat:@"<style type=\"text/css\">%@</style>\n<style type=\"text/css\">%@</style>\n", self.css, self.cssHilightJs];
-    NSString *htmlHeadEnd = @"</head>\n";
-    NSString *htmlBody = [NSString stringWithFormat:@"<body>\n%@</body></html>", soldouted];
-    return [NSString stringWithFormat:@"%@%@%@%@%@", htmlDocType, htmlHeadStart, htmlStyle, htmlHeadEnd, htmlBody];
+- (NSString *)htmlString {
+    NSArray<NSString *> *mStyles = [Meboshi markdownStyles];
+    NSArray<NSString *> *cStyles = [Meboshi codeHilightStyles];
+    return [Meboshi toHtmlWithTitle:self.fileURL.lastPathComponent data:self.markdownData markdownStyle:mStyles[0] codeHilightStyle:cStyles[0]];
+//    return [Meboshi toHtmlWithTitle:self.fileURL.lastPathComponent
+//                               data:self.markdownData
+//                                css:self.css
+//                            codeCss:self.cssHilightJs];
 }
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"github"
-                                                         ofType:@"css"];
-        NSError *error;
-        self.css = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            self.css = @"";
-        }
-        path = [[NSBundle mainBundle] pathForResource:@"styles/github"
-                                                         ofType:@"css"];
-        self.cssHilightJs = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            self.cssHilightJs = @"";
-        }
+//        NSString *path = [[NSBundle mainBundle] pathForResource:@"github"
+//                                                         ofType:@"css"];
+//        NSError *error;
+//        self.css = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+//        if (error) {
+//            NSLog(@"%@", error.localizedDescription);
+//            self.css = @"";
+//        }
+//        path = [[NSBundle mainBundle] pathForResource:@"styles/github"
+//                                                         ofType:@"css"];
+//        self.cssHilightJs = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
+//        if (error) {
+//            NSLog(@"%@", error.localizedDescription);
+//            self.cssHilightJs = @"";
+//        }
     }
     return self;
 }
