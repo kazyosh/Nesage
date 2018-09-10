@@ -16,4 +16,5 @@
                          data:(NSData *)data
                 markdownStyle:(NSString *)markdownStyle
              codeHilightStyle:(NSString *)codeStyle;
++ (NSString *)markdownCss:(NSString *)styleName;
 @end

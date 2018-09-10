@@ -53,6 +53,13 @@
 			remoteGlobalIDString = 15036ADE211A6364005EAC87;
 			remoteInfo = Nebiki;
 		};
+		15DD290A21409B3F0082FA47 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15DD290621409B3C0082FA47 /* NesageQL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 15DD28F721409B3C0082FA47;
+			remoteInfo = NesageQL;
+		};
 		3093759E1CB714A200A68F8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3093757C1CB714A100A68F8E /* Project object */;
@@ -107,6 +114,7 @@
 		152DD2E51FEDEC51000A734F /* NEWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEWindow.h; sourceTree = "<group>"; };
 		152DD2E61FEDEC51000A734F /* NEWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEWindow.m; sourceTree = "<group>"; };
 		152DD2E81FEDFF60000A734F /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.css; sourceTree = "<group>"; };
+		15DD290621409B3C0082FA47 /* NesageQL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NesageQL.xcodeproj; path = NesageQL/NesageQL.xcodeproj; sourceTree = "<group>"; };
 		15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePanelAccessoryView.h; sourceTree = "<group>"; };
 		300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavePanelAccessoryView.m; sourceTree = "<group>"; };
@@ -211,6 +219,14 @@
 			path = highlight.js;
 			sourceTree = "<group>";
 		};
+		15DD290721409B3C0082FA47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15DD290B21409B3F0082FA47 /* NesageQL.qlgenerator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		15F11FEF2037ED3A00D92016 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +238,7 @@
 		3093757B1CB714A000A68F8E = {
 			isa = PBXGroup;
 			children = (
+				15DD290621409B3C0082FA47 /* NesageQL.xcodeproj */,
 				309375BF1CB7185900A68F8E /* WebKit.framework */,
 				309375861CB714A100A68F8E /* Nesage */,
 				309375A01CB714A200A68F8E /* NesageTests */,
@@ -434,6 +451,12 @@
 			mainGroup = 3093757B1CB714A000A68F8E;
 			productRefGroup = 309375851CB714A100A68F8E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 15DD290721409B3C0082FA47 /* Products */;
+					ProjectRef = 15DD290621409B3C0082FA47 /* NesageQL.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				309375831CB714A100A68F8E /* Nesage */,
@@ -443,6 +466,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		15DD290B21409B3F0082FA47 /* NesageQL.qlgenerator */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NesageQL.qlgenerator;
+			remoteRef = 15DD290A21409B3F0082FA47 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		15036ADD211A6364005EAC87 /* Resources */ = {

@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15DD28FB21409B3C0082FA47 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FA21409B3C0082FA47 /* GenerateThumbnailForURL.m */; };
+		15DD28FD21409B3C0082FA47 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FC21409B3C0082FA47 /* GeneratePreviewForURL.m */; };
+		15DD28FF21409B3C0082FA47 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FE21409B3C0082FA47 /* main.c */; };
+		15DD290E21409B630082FA47 /* Nebiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DD290D21409B630082FA47 /* Nebiki.framework */; };
+		15DD29102141ED420082FA47 /* NesageQL.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15DD28F721409B3C0082FA47 /* NesageQL.qlgenerator */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		15DD29132145E3AC0082FA47 /* Nebiki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15DD290D21409B630082FA47 /* Nebiki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		15DD290F2141ED070082FA47 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/Library/QuickLook";
+			dstSubfolderSpec = 0;
+			files = (
+				15DD29102141ED420082FA47 /* NesageQL.qlgenerator in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15DD29122145DE1F0082FA47 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15DD29132145E3AC0082FA47 /* Nebiki.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		15DD28F721409B3C0082FA47 /* NesageQL.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NesageQL.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		15DD28FA21409B3C0082FA47 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
+		15DD28FC21409B3C0082FA47 /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
+		15DD28FE21409B3C0082FA47 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		15DD290021409B3C0082FA47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15DD290D21409B630082FA47 /* Nebiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Nebiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15DD28F321409B3C0082FA47 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15DD290E21409B630082FA47 /* Nebiki.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15DD28ED21409B3C0082FA47 = {
+			isa = PBXGroup;
+			children = (
+				15DD28F921409B3C0082FA47 /* NesageQL */,
+				15DD28F821409B3C0082FA47 /* Products */,
+				15DD290C21409B630082FA47 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		15DD28F821409B3C0082FA47 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15DD28F721409B3C0082FA47 /* NesageQL.qlgenerator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15DD28F921409B3C0082FA47 /* NesageQL */ = {
+			isa = PBXGroup;
+			children = (
+				15DD28FA21409B3C0082FA47 /* GenerateThumbnailForURL.m */,
+				15DD28FC21409B3C0082FA47 /* GeneratePreviewForURL.m */,
+				15DD28FE21409B3C0082FA47 /* main.c */,
+				15DD290021409B3C0082FA47 /* Info.plist */,
+			);
+			path = NesageQL;
+			sourceTree = "<group>";
+		};
+		15DD290C21409B630082FA47 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				15DD290D21409B630082FA47 /* Nebiki.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		15DD28F421409B3C0082FA47 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		15DD28F621409B3C0082FA47 /* NesageQL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15DD290321409B3C0082FA47 /* Build configuration list for PBXNativeTarget "NesageQL" */;
+			buildPhases = (
+				15DD28F221409B3C0082FA47 /* Sources */,
+				15DD28F321409B3C0082FA47 /* Frameworks */,
+				15DD28F421409B3C0082FA47 /* Headers */,
+				15DD28F521409B3C0082FA47 /* Resources */,
+				15DD290F2141ED070082FA47 /* CopyFiles */,
+				15DD29122145DE1F0082FA47 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NesageQL;
+			productName = NesageQL;
+			productReference = 15DD28F721409B3C0082FA47 /* NesageQL.qlgenerator */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15DD28EE21409B3C0082FA47 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Kazuhiro YOSHIDA";
+				TargetAttributes = {
+					15DD28F621409B3C0082FA47 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 15DD28F121409B3C0082FA47 /* Build configuration list for PBXProject "NesageQL" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 15DD28ED21409B3C0082FA47;
+			productRefGroup = 15DD28F821409B3C0082FA47 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15DD28F621409B3C0082FA47 /* NesageQL */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15DD28F521409B3C0082FA47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15DD28F221409B3C0082FA47 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15DD28FB21409B3C0082FA47 /* GenerateThumbnailForURL.m in Sources */,
+				15DD28FD21409B3C0082FA47 /* GeneratePreviewForURL.m in Sources */,
+				15DD28FF21409B3C0082FA47 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		15DD290121409B3C0082FA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		15DD290221409B3C0082FA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		15DD290421409B3C0082FA47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2W9KGG8A79;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Nebikli";
+				INFOPLIST_FILE = NesageQL/Info.plist;
+				INSTALL_PATH = /Library/QuickLook;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.44da.NesageQL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Debug;
+		};
+		15DD290521409B3C0082FA47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2W9KGG8A79;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../Nebikli";
+				INFOPLIST_FILE = NesageQL/Info.plist;
+				INSTALL_PATH = /Library/QuickLook;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.co.44da.NesageQL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = qlgenerator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15DD28F121409B3C0082FA47 /* Build configuration list for PBXProject "NesageQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15DD290121409B3C0082FA47 /* Debug */,
+				15DD290221409B3C0082FA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15DD290321409B3C0082FA47 /* Build configuration list for PBXNativeTarget "NesageQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15DD290421409B3C0082FA47 /* Debug */,
+				15DD290521409B3C0082FA47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 15DD28EE21409B3C0082FA47 /* Project object */;
+}
