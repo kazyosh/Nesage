@@ -7,15 +7,22 @@
 // http://opensource.org/licenses/mit-license.php
 //
 
-#import "SoldoutWrapper.h"
+#import <AppKit/AppKit.h>
 
+#import "SoldoutWrapper.h"
 #import "Meboshi.h"
 
 @implementation Meboshi
 
 + (NSArray<NSString *> *)markdownStyles {
+    NSBundle *bundle = [NSBundle bundleForClass:[Meboshi class]];
+    NSArray* pathArray = [bundle pathsForResourcesOfType:@"css"
+                                              inDirectory:@"markdownStyles"];
     NSMutableArray<NSString *> *result = [[NSMutableArray alloc] init];
-    [result addObject:@"github"];
+    for (NSString *path in pathArray) {
+        NSString *fileName = [path lastPathComponent];
+        [result addObject:[fileName componentsSeparatedByString:@"."][0]];
+    }
     return result;
 }
 
@@ -26,29 +33,54 @@
 }
 
 + (NSString *)toHtmlWithTitle:(NSString *)title
+                         data:(NSData *)data {
+    if (@available(macOS 10_14, *)) {
+        if ([[NSAppearance currentAppearance].name isEqual:NSAppearanceNameDarkAqua]) {
+            return [Meboshi toHtmlWithTitle:title
+                                       data:data
+                        optionalHeaderItems:nil
+                              markdownStyle:@"solarized-dark"
+                           codeHilightStyle:@"solarized-dark"];
+        }
+    }
+    return [Meboshi toHtmlWithTitle:title
+                               data:data
+                optionalHeaderItems:nil
+                      markdownStyle:@"github"
+                   codeHilightStyle:@"github"];
+}
+
++ (NSString *)toHtmlWithTitle:(NSString *)title
                          data:(NSData *)data
+          optionalHeaderItems:(NSArray<NSString *> *)headerItems
                 markdownStyle:(NSString *)markdownStyle
              codeHilightStyle:(NSString *)codeStyle {
-    return [Meboshi toHtmlWithTitle:title data:data
-                                css:[Meboshi markdownCss:markdownStyle]
-                            codeCss:[Meboshi codeCss:codeStyle]];
-}
-
-+ (NSString *)toHtmlWithTitle:(NSString *)title data:(NSData *)data css:(NSString *)css codeCss:(NSString *)codeCss {
+    
     NSString *soldouted = [SoldoutWrapper htmlWithData:data];
-    NSLog(@"%@", soldouted);
-    NSString *htmlDocType = @"<!DOCTYPE html>\n";
-    NSString *htmlHeadStart = [NSString stringWithFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n", title];
-    NSString *htmlStyle = [NSString stringWithFormat:@"<style type=\"text/css\">%@</style>\n<style type=\"text/css\">%@</style>\n", css, codeCss];
-    NSString *htmlHeadEnd = @"</head>\n";
-    NSString *htmlBody = [NSString stringWithFormat:@"<body>\n%@</body></html>", soldouted];
-    return [NSString stringWithFormat:@"%@%@%@%@%@", htmlDocType, htmlHeadStart, htmlStyle, htmlHeadEnd, htmlBody];
+    NSMutableString *htmlString = [[NSMutableString alloc] initWithString:@"<!DOCTYPE html>\n" ];
+    [htmlString appendFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n", title];
+    if ([markdownStyle length]) {
+        [htmlString appendFormat:@"<style type=\"text/css\">%@</style>\n", [Meboshi cssForMarkdownStyle:markdownStyle]];
+        [htmlString appendFormat:@"<style type=\"text/css\">%@</style>\n", [Meboshi cssForMarkdownStyle:@"light-default"]];
+    }
+    if ([codeStyle length]) {
+        [htmlString appendFormat:@"<style type=\"text/css\">%@</style>\n", [Meboshi cssForCodeHilight:codeStyle]];
+    }
+    if ([headerItems count]) {
+        for (NSString *item in headerItems) {
+            [htmlString appendString:item];
+        }
+    }
+    [htmlString appendString:@"</head>\n"];
+    [htmlString appendFormat:@"<body>\n%@</body></html>\n", soldouted];
+    return htmlString;
 }
 
-+ (NSString *)markdownCss:(NSString *)styleName {
-//    NSString *resource = [NSString stringWithFormat:@"styles/%@", styleName];
-    NSString *path = [[NSBundle mainBundle] pathForResource:styleName
-                                                     ofType:@"css"];
++ (NSString *)cssForMarkdownStyle:(NSString *)styleName {
+    NSString *resource = [NSString stringWithFormat:@"markdownStyles/%@", styleName];
+    NSBundle *bundle = [NSBundle bundleForClass:[Meboshi class]];
+    NSString *path = [bundle pathForResource:resource
+                                      ofType:@"css"];
     NSError *error;
     NSString *result = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     if (error) {
@@ -60,7 +92,7 @@
     }
 }
 
-+ (NSString *)codeCss:(NSString *)styleName {
++ (NSString *)cssForCodeHilight:(NSString *)styleName {
     NSString *resource = [NSString stringWithFormat:@"styles/%@", styleName];
     NSBundle *bundle = [NSBundle bundleForClass:[Meboshi class]];
     NSString *path = [bundle pathForResource:resource

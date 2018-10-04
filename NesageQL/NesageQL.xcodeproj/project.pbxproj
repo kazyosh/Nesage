@@ -7,32 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15A48F14215C4E1E00937215 /* Nebiki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15DD290D21409B630082FA47 /* Nebiki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		15DD28FB21409B3C0082FA47 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FA21409B3C0082FA47 /* GenerateThumbnailForURL.m */; };
 		15DD28FD21409B3C0082FA47 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FC21409B3C0082FA47 /* GeneratePreviewForURL.m */; };
 		15DD28FF21409B3C0082FA47 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FE21409B3C0082FA47 /* main.c */; };
 		15DD290E21409B630082FA47 /* Nebiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DD290D21409B630082FA47 /* Nebiki.framework */; };
 		15DD29102141ED420082FA47 /* NesageQL.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15DD28F721409B3C0082FA47 /* NesageQL.qlgenerator */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		15DD29132145E3AC0082FA47 /* Nebiki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15DD290D21409B630082FA47 /* Nebiki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		15DD290F2141ED070082FA47 /* CopyFiles */ = {
+		15A48F13215C4DFF00937215 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "~/Library/QuickLook";
+			dstPath = "Users/$(USER)/Library/QuickLook/NesageQL.qlgenerator/Contents/Frameworks";
 			dstSubfolderSpec = 0;
 			files = (
-				15DD29102141ED420082FA47 /* NesageQL.qlgenerator in CopyFiles */,
+				15A48F14215C4E1E00937215 /* Nebiki.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		15DD29122145DE1F0082FA47 /* CopyFiles */ = {
+		15DD290F2141ED070082FA47 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
+			dstPath = "Users/$(USER)/Library/QuickLook";
+			dstSubfolderSpec = 0;
 			files = (
-				15DD29132145E3AC0082FA47 /* Nebiki.framework in CopyFiles */,
+				15DD29102141ED420082FA47 /* NesageQL.qlgenerator in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,8 +116,9 @@
 				15DD28F321409B3C0082FA47 /* Frameworks */,
 				15DD28F421409B3C0082FA47 /* Headers */,
 				15DD28F521409B3C0082FA47 /* Resources */,
+				15A48F11215C485700937215 /* ShellScript */,
 				15DD290F2141ED070082FA47 /* CopyFiles */,
-				15DD29122145DE1F0082FA47 /* CopyFiles */,
+				15A48F13215C4DFF00937215 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -168,6 +169,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15A48F11215C485700937215 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf /Users/$(USER)/Library/QuickLook\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		15DD28F221409B3C0082FA47 /* Sources */ = {

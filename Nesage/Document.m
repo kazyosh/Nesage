@@ -19,33 +19,12 @@
 
 @implementation Document
 - (NSString *)htmlString {
-    NSArray<NSString *> *mStyles = [Meboshi markdownStyles];
-    NSArray<NSString *> *cStyles = [Meboshi codeHilightStyles];
-    return [Meboshi toHtmlWithTitle:self.fileURL.lastPathComponent data:self.markdownData markdownStyle:mStyles[0] codeHilightStyle:cStyles[0]];
-//    return [Meboshi toHtmlWithTitle:self.fileURL.lastPathComponent
-//                               data:self.markdownData
-//                                css:self.css
-//                            codeCss:self.cssHilightJs];
+    return [Meboshi toHtmlWithTitle:self.fileURL.lastPathComponent data:self.markdownData];
 }
 
 - (instancetype)init {
     self = [super init];
     if (self) {
-//        NSString *path = [[NSBundle mainBundle] pathForResource:@"github"
-//                                                         ofType:@"css"];
-//        NSError *error;
-//        self.css = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-//        if (error) {
-//            NSLog(@"%@", error.localizedDescription);
-//            self.css = @"";
-//        }
-//        path = [[NSBundle mainBundle] pathForResource:@"styles/github"
-//                                                         ofType:@"css"];
-//        self.cssHilightJs = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-//        if (error) {
-//            NSLog(@"%@", error.localizedDescription);
-//            self.cssHilightJs = @"";
-//        }
     }
     return self;
 }

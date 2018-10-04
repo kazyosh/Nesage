@@ -13,8 +13,12 @@
 + (NSArray<NSString *> *)markdownStyles;
 + (NSArray<NSString *> *)codeHilightStyles;
 + (NSString *)toHtmlWithTitle:(NSString *)title
+                         data:(NSData *)data;
++ (NSString *)toHtmlWithTitle:(NSString *)title
                          data:(NSData *)data
+          optionalHeaderItems:(NSArray<NSString *> *)headerItems
                 markdownStyle:(NSString *)markdownStyle
              codeHilightStyle:(NSString *)codeStyle;
-+ (NSString *)markdownCss:(NSString *)styleName;
++ (NSString *)cssForMarkdownStyle:(NSString *)styleName;
++ (NSString *)cssForCodeHilight:(NSString *)styleName;
 @end

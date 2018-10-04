@@ -29,6 +29,7 @@
 		15036B0F211BB15F005EAC87 /* HighlightJsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15036B0B211BB15F005EAC87 /* HighlightJsWrapper.m */; };
 		152DD2E71FEDEC51000A734F /* NEWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2E61FEDEC51000A734F /* NEWindow.m */; };
 		152DD2E91FEDFF60000A734F /* github.css in Resources */ = {isa = PBXBuildFile; fileRef = 152DD2E81FEDFF60000A734F /* github.css */; };
+		15A48F1921642F3700937215 /* markdownStyles in Resources */ = {isa = PBXBuildFile; fileRef = 15A48F1821642F3700937215 /* markdownStyles */; };
 		15F11FF12037ED3B00D92016 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */; };
 		300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */; };
 		300F330E1CC1BF620036149A /* SavePanelAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 300F330C1CC1BF620036149A /* SavePanelAccessoryView.xib */; };
@@ -114,6 +115,7 @@
 		152DD2E51FEDEC51000A734F /* NEWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEWindow.h; sourceTree = "<group>"; };
 		152DD2E61FEDEC51000A734F /* NEWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEWindow.m; sourceTree = "<group>"; };
 		152DD2E81FEDFF60000A734F /* github.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.css; sourceTree = "<group>"; };
+		15A48F1821642F3700937215 /* markdownStyles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = markdownStyles; sourceTree = "<group>"; };
 		15DD290621409B3C0082FA47 /* NesageQL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NesageQL.xcodeproj; path = NesageQL/NesageQL.xcodeproj; sourceTree = "<group>"; };
 		15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		300F330A1CC1BF620036149A /* SavePanelAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavePanelAccessoryView.h; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		15036AE0211A6364005EAC87 /* Nebiki */ = {
 			isa = PBXGroup;
 			children = (
+				15A48F1821642F3700937215 /* markdownStyles */,
 				15036B08211BB15F005EAC87 /* HighlightJsWrapper.h */,
 				15036B0B211BB15F005EAC87 /* HighlightJsWrapper.m */,
 				15036B09211BB15F005EAC87 /* SoldoutWrapper.h */,
@@ -420,7 +423,7 @@
 		3093757C1CB714A100A68F8E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "ProSoftware,Inc.";
 				TargetAttributes = {
 					15036ADE211A6364005EAC87 = {
@@ -483,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				15036AF5211A642F005EAC87 /* LICENSE in Resources */,
+				15A48F1921642F3700937215 /* markdownStyles in Resources */,
 				15036AF7211A642F005EAC87 /* styles in Resources */,
 				15036AF6211A642F005EAC87 /* highlight.pack.js in Resources */,
 			);
@@ -671,12 +675,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -722,12 +728,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

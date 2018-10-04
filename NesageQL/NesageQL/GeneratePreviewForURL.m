@@ -29,13 +29,18 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
                                              data:data
                                     markdownStyle:[Meboshi markdownStyles][0]
                                  codeHilightStyle:[Meboshi codeHilightStyles][0]];
-//        NSString *html = [NSString stringWithContentsOfURL:nsurl encoding:NSUTF8StringEncoding error:nil];
-//        NSLog(@"***** %@", html);
+        NSString *css = [Meboshi cssForCodeHilight:[Meboshi codeHilightStyles][0]];
 
         // Put metadata and attachment in a dictionary
         NSDictionary *properties = @{ // properties for the HTML data
                                      (__bridge NSString *)kQLPreviewPropertyTextEncodingNameKey : @"UTF-8",
                                      (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @"text/html",
+                                     (__bridge NSString *)kQLPreviewPropertyMIMETypeKey : @{
+                                             @"css" : @{
+                                                     (__bridge NSString*)kQLPreviewPropertyMIMETypeKey : @"text/css",
+                                                     (__bridge NSString*)kQLPreviewPropertyAttachmentDataKey: css,
+                                                     }
+                                             }
                                      };
         
         // Pass preview data and metadata/attachment dictionary to QuickLook
