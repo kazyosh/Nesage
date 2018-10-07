@@ -39,7 +39,7 @@
             return [Meboshi toHtmlWithTitle:title
                                        data:data
                         optionalHeaderItems:nil
-                              markdownStyle:@"solarized-dark"
+                              markdownStyle:@"dark"
                            codeHilightStyle:@"solarized-dark"];
         }
     }
