@@ -25,11 +25,21 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 
         if (QLPreviewRequestIsCancelled(preview)) return noErr;
         
+        NSString *markdownStyle = @"github";
+        NSString *codeHilightStyle = @"github";
+        if (@available(macOS 10_14, *)) {
+            if ([[NSAppearance currentAppearance].name isEqual:NSAppearanceNameDarkAqua]) {
+                markdownStyle = @"dark";
+                codeHilightStyle = @"solarized-dark";
+            }
+        }
         NSString *html = [Meboshi toHtmlWithTitle:[nsurl lastPathComponent]
                                              data:data
-                                    markdownStyle:[Meboshi markdownStyles][0]
-                                 codeHilightStyle:[Meboshi codeHilightStyles][0]];
-        NSString *css = [Meboshi cssForCodeHilight:[Meboshi codeHilightStyles][0]];
+                              optionalHeaderItems:@[@"<link rel=\"stylesheet\" type=\"text/css\" href=\"cid:css\">"]
+                                    markdownStyle:@"dark"
+                                 codeHilightStyle:@"solarized-dark"];
+        NSMutableString *css = [NSMutableString stringWithString:[Meboshi cssForCodeHilightStyle:markdownStyle]];
+        [css appendString:[Meboshi cssForMarkdownStyle:codeHilightStyle]];
 
         // Put metadata and attachment in a dictionary
         NSDictionary *properties = @{ // properties for the HTML data
