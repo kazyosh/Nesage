@@ -28,6 +28,7 @@
 		15036B0E211BB15F005EAC87 /* SoldoutWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15036B0A211BB15F005EAC87 /* SoldoutWrapper.m */; };
 		15036B0F211BB15F005EAC87 /* HighlightJsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 15036B0B211BB15F005EAC87 /* HighlightJsWrapper.m */; };
 		152DD2E71FEDEC51000A734F /* NEWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 152DD2E61FEDEC51000A734F /* NEWindow.m */; };
+		155E25C621700B5800796D66 /* NesageQL.qlgenerator in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15DD290B21409B3F0082FA47 /* NesageQL.qlgenerator */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15A48F1921642F3700937215 /* markdownStyles in Resources */ = {isa = PBXBuildFile; fileRef = 15A48F1821642F3700937215 /* markdownStyles */; };
 		15F11FF12037ED3B00D92016 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15F11FF02037ED3B00D92016 /* JavaScriptCore.framework */; };
 		300F330D1CC1BF620036149A /* SavePanelAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 300F330B1CC1BF620036149A /* SavePanelAccessoryView.m */; };
@@ -52,6 +53,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 15036ADE211A6364005EAC87;
 			remoteInfo = Nebiki;
+		};
+		155E25C7217012DB00796D66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15DD290621409B3C0082FA47 /* NesageQL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 15DD28F621409B3C0082FA47;
+			remoteInfo = NesageQL;
 		};
 		15DD290A21409B3F0082FA47 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -86,6 +94,16 @@
 				15036AE7211A6364005EAC87 /* Nebiki.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		155E25C421700B4B00796D66 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/QuickLook;
+			dstSubfolderSpec = 1;
+			files = (
+				155E25C621700B5800796D66 /* NesageQL.qlgenerator in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -369,10 +387,12 @@
 				309375811CB714A100A68F8E /* Frameworks */,
 				309375821CB714A100A68F8E /* Resources */,
 				15036AEB211A6364005EAC87 /* Embed Frameworks */,
+				155E25C421700B4B00796D66 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				155E25C8217012DB00796D66 /* PBXTargetDependency */,
 				15036AE5211A6364005EAC87 /* PBXTargetDependency */,
 			);
 			name = Nesage;
@@ -570,6 +590,11 @@
 			isa = PBXTargetDependency;
 			target = 15036ADE211A6364005EAC87 /* Nebiki */;
 			targetProxy = 15036AE4211A6364005EAC87 /* PBXContainerItemProxy */;
+		};
+		155E25C8217012DB00796D66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NesageQL;
+			targetProxy = 155E25C7217012DB00796D66 /* PBXContainerItemProxy */;
 		};
 		3093759F1CB714A200A68F8E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

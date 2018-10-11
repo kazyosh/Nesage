@@ -20,5 +20,5 @@
                 markdownStyle:(NSString *)markdownStyle
              codeHilightStyle:(NSString *)codeStyle;
 + (NSString *)cssForMarkdownStyle:(NSString *)styleName;
-+ (NSString *)cssForCodeHilight:(NSString *)styleName;
++ (NSString *)cssForCodeHilightStyle:(NSString *)styleName;
 @end

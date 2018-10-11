@@ -27,8 +27,14 @@
 }
 
 + (NSArray<NSString *> *)codeHilightStyles {
+    NSBundle *bundle = [NSBundle bundleForClass:[Meboshi class]];
+    NSArray* pathArray = [bundle pathsForResourcesOfType:@"css"
+                                             inDirectory:@"styles"];
     NSMutableArray<NSString *> *result = [[NSMutableArray alloc] init];
-    [result addObject:@"github"];
+    for (NSString *path in pathArray) {
+        NSString *fileName = [path lastPathComponent];
+        [result addObject:[fileName componentsSeparatedByString:@"."][0]];
+    }
     return result;
 }
 
@@ -61,10 +67,9 @@
     [htmlString appendFormat:@"<html><head>\n<meta charset=\"UTF-8\">\n<title>%@</title>\n", title];
     if ([markdownStyle length]) {
         [htmlString appendFormat:@"<style type=\"text/css\">%@</style>\n", [Meboshi cssForMarkdownStyle:markdownStyle]];
-        [htmlString appendFormat:@"<style type=\"text/css\">%@</style>\n", [Meboshi cssForMarkdownStyle:@"light-default"]];
     }
     if ([codeStyle length]) {
-        [htmlString appendFormat:@"<style type=\"text/css\">%@</style>\n", [Meboshi cssForCodeHilight:codeStyle]];
+        [htmlString appendFormat:@"<style type=\"text/css\">%@</style>\n", [Meboshi cssForCodeHilightStyle:codeStyle]];
     }
     if ([headerItems count]) {
         for (NSString *item in headerItems) {
@@ -92,7 +97,7 @@
     }
 }
 
-+ (NSString *)cssForCodeHilight:(NSString *)styleName {
++ (NSString *)cssForCodeHilightStyle:(NSString *)styleName {
     NSString *resource = [NSString stringWithFormat:@"styles/%@", styleName];
     NSBundle *bundle = [NSBundle bundleForClass:[Meboshi class]];
     NSString *path = [bundle pathForResource:resource
