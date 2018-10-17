@@ -7,11 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15C42D8C2176ADDC00005CEB /* Nebiki.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 15DD290D21409B630082FA47 /* Nebiki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		15DD28FB21409B3C0082FA47 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FA21409B3C0082FA47 /* GenerateThumbnailForURL.m */; };
 		15DD28FD21409B3C0082FA47 /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FC21409B3C0082FA47 /* GeneratePreviewForURL.m */; };
 		15DD28FF21409B3C0082FA47 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 15DD28FE21409B3C0082FA47 /* main.c */; };
 		15DD290E21409B630082FA47 /* Nebiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15DD290D21409B630082FA47 /* Nebiki.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		15C42D8B2176ADC900005CEB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				15C42D8C2176ADDC00005CEB /* Nebiki.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		15DD28F721409B3C0082FA47 /* NesageQL.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NesageQL.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +105,7 @@
 				15DD28F321409B3C0082FA47 /* Frameworks */,
 				15DD28F421409B3C0082FA47 /* Headers */,
 				15DD28F521409B3C0082FA47 /* Resources */,
+				15C42D8B2176ADC900005CEB /* CopyFiles */,
 			);
 			buildRules = (
 			);
