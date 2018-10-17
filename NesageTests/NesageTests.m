@@ -2,8 +2,10 @@
 //  NesageTests.m
 //  NesageTests
 //
-//  Created by 吉田 和裕 on 4/8/16.
-//  Copyright © 2016 ProSoftware,Inc. All rights reserved.
+// Copyright (c) 2018 kazyosh
+//
+// This software is released under the MIT License.
+// http://opensource.org/licenses/mit-license.php
 //
 
 #import <XCTest/XCTest.h>
